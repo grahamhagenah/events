@@ -5,7 +5,8 @@
 #   ticketweb  a venue page with TicketWeb's event listing (The Middle East)
 #   jsonld     a page with schema.org Event data in it (the Brattle's Coming Soon page, House of Blues)
 #   coolidge   the Coolidge Corner Theatre's showtimes page
-#   ticketmaster  a Ticketmaster venue id in place of the URL (the Paradise); needs the TICKETMASTER_KEY secret
+#   ticketmaster  a Ticketmaster venue id in place of the URL (the Paradise); needs the TICKETMASTER_KEY secret.
+#                 Find a venue's id with Actions → "Find a Ticketmaster venue" on GitHub.
 #   ics        an iCalendar feed
 
 # Music
@@ -14,6 +15,8 @@ rss        https://www.sinclaircambridge.com/events/rss   music   The Sinclair
 ticketweb  https://mideastclub.com/   music   The Middle East
 jsonld     https://boston.houseofblues.com/shows   music   House of Blues
 ticketmaster  KovZpZA11JtA   music   Paradise
+ticketmaster  KovZpapwne   music   Brighton Music Hall
+ticketmaster  KovZ917AJnQ   music   Crystal Ballroom
 
 # Film
 jsonld     https://brattlefilm.org/coming-soon/   film   Brattle
