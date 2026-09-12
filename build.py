@@ -383,7 +383,7 @@ def page(title, body, built_at):
   .filter button {{ padding: 0; border: 0; background: none; color: #666; font: inherit; font-size: .8rem; cursor: pointer; }}
   .filter button:hover {{ color: #999; }}
   .filter button[aria-pressed="true"] {{ color: #fff; }}
-  .filter button:not([data-show="all"])::before, .source::before, li::before {{
+  .filter button:not([data-show="all"])::before, .source::before {{
     content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--dot); }}
   .filter button::before {{ display: inline-block; margin-right: .45em; vertical-align: .1em; }}
   [data-show="music"], [data-category="music"] {{ --dot: var(--music); }}
@@ -396,10 +396,10 @@ def page(title, body, built_at):
   /* Rows as in the newsfeed: the venue beside its dot, then the name, one line tall, times after it. */
   li {{ position: relative; display: grid; grid-template-columns: 10rem 1fr; gap: 1.25rem; align-items: baseline; padding: .4rem 0; }}
   li[hidden], .day[hidden] {{ display: none; }}
-  li::before {{ display: none; }}
-  .source {{ position: relative; min-width: 0; color: #666; font-size: .8em; }}
-  .source > span {{ display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
-  .source::before {{ position: absolute; left: -.9rem; top: .5em; }}
+  /* The dot leads the venue name, inside the text's left edge. */
+  .source {{ display: flex; align-items: center; gap: .5em; min-width: 0; color: #666; font-size: .8em; }}
+  .source::before {{ flex: none; }}
+  .source > span {{ min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
   .headline {{ display: flex; align-items: baseline; min-width: 0; }}
   .headline .title {{ min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
   .times, .detail {{ margin-left: .6em; color: #666; font-size: .8em; white-space: nowrap; }}
@@ -411,9 +411,6 @@ def page(title, body, built_at):
     li {{ grid-template-columns: 1fr; gap: 0; }}
     .headline {{ display: block; }}
     .headline .title, .times, .detail {{ white-space: normal; }}
-    /* The dot moves beside the name's first line, below the venue. */
-    .source::before {{ display: none; }}
-    li::before {{ display: block; position: absolute; left: -.9rem; top: calc(.4rem + 1.16em + .725em - 1px); }}
   }}
   a {{ color: #fff; text-decoration: none; }}
   a:hover {{ text-decoration: underline; }}
