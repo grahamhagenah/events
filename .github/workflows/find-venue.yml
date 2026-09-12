@@ -1,0 +1,23 @@
+name: Find a Ticketmaster venue
+
+# Prints the Ticketmaster venue ids for the names given, for ticketmaster lines in sources.txt.
+on:
+  workflow_dispatch:
+    inputs:
+      names:
+        description: Venue names, separated by commas
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 find_venue.py
+        env:
+          TICKETMASTER_KEY: ${{ secrets.TICKETMASTER_KEY }}
+          # Passed as a variable, not written into the command, so any text in a name stays just text.
+          NAMES: ${{ inputs.names }}
