@@ -1,4 +1,4 @@
-# One source per line: how to read it, its URL, a category (music, film or arts), and a name.
+# One source per line: how to read it, its URL, a category (music or film), and a name.
 # How to read it:
 #   aeg        an AEG Presents venue's events.json (Roadrunner)
 #   rss        an event feed whose titles end in the date, "… on Sep 12, 2026" (AXS venues like The Sinclair)
@@ -26,6 +26,3 @@ jsonld     https://brattlefilm.org/coming-soon/   film   Brattle
 coolidge   https://coolidge.org/showtimes   film   Coolidge Corner
 landmark   X019B   film   Kendall Square
 alamo      https://drafthouse.com/s/mother/v2/schedule/market/boston   film   Alamo Drafthouse
-
-# Arts and festivals
-ics        https://www.cambridgema.gov/arts/Calendar.ics   arts   Cambridge Arts

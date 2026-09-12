@@ -23,7 +23,7 @@ REPO_URL = "https://github.com/grahamhagenah/events"
 DAYS_AHEAD = 30  # How far ahead the page lists events.
 BOSTON = ZoneInfo("America/New_York")
 USER_AGENT = "Mozilla/5.0 (compatible; events-feed/1.0)"
-CATEGORIES = {"music": "Music", "film": "Film", "arts": "Arts & festivals"}
+CATEGORIES = {"music": "Music", "film": "Film"}
 
 
 def read_sources():
@@ -237,9 +237,10 @@ def read_landmark(source):
     return events
 
 
-# Ticketmaster's own type for each show ("segment"), so comedy and drag nights at a music venue go under
-# arts. Comedy and theater are both Arts & Theatre there. Others, like Sports, keep the venue's category.
-TICKETMASTER_SEGMENTS = {"Music": "music", "Film": "film", "Arts & Theatre": "arts", "Miscellaneous": "arts"}
+# Ticketmaster's own type for each show ("segment"). Concerts and films are listed; other types, like the
+# comedy, drag and theater nights (Arts & Theatre) some music venues host, are left out. A show without a
+# type keeps the venue's category.
+TICKETMASTER_SEGMENTS = {"Music": "music", "Film": "film"}
 
 
 def read_ticketmaster(source):
@@ -261,10 +262,13 @@ def read_ticketmaster(source):
         clock = None
         if start.get("localTime") and not start.get("timeTBA"):
             clock = datetime.strptime(start["localTime"], "%H:%M:%S").time()
-        listing = event(source, item["name"], date.fromisoformat(start["localDate"]), clock, link=item.get("url", ""))
         types = item.get("classifications") or []
         primary = next((kind for kind in types if kind.get("primary")), types[0] if types else {})
-        listing["category"] = TICKETMASTER_SEGMENTS.get((primary.get("segment") or {}).get("name"), source["category"])
+        segment = (primary.get("segment") or {}).get("name")
+        if segment and segment not in TICKETMASTER_SEGMENTS:
+            continue
+        listing = event(source, item["name"], date.fromisoformat(start["localDate"]), clock, link=item.get("url", ""))
+        listing["category"] = TICKETMASTER_SEGMENTS.get(segment, source["category"])
         events.append(listing)
     return events
 
@@ -399,9 +403,6 @@ ICONS = {
     # A frame of film, with sprocket holes down both sides.
     "film": icon("Film", '<rect x="2" y="2" width="12" height="12" rx="1.5"/><path d="M5 2v12M11 2v12'
                          'M2 5.5h3M2 10.5h3M11 5.5h3M11 10.5h3"/>'),
-    # A four-point sparkle.
-    "arts": icon("Arts & festivals", '<path d="M8 1.75 9.5 6.5 14.25 8 9.5 9.5 8 14.25 6.5 9.5 1.75 8 6.5 6.5Z" '
-                                     'fill="currentColor" stroke-width="1"/>'),
 }
 
 
@@ -575,8 +576,8 @@ def page(title, body, built_at):
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>{title}</title>
 <style>
-  /* Category dots, in the list and on the filter: violet music, amber film, green arts and festivals. */
-  :root {{ --music: #a78bfa; --film: #fbbf24; --arts: #34d399; }}
+  /* Category dots, in the list and on the filter: violet music, amber film. */
+  :root {{ --music: #a78bfa; --film: #fbbf24; }}
   html {{ background: #000; }}
   body {{ margin: 0; padding: 3rem 1.25rem 4rem; color: #fff; background: #000;
          font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }}
@@ -593,7 +594,6 @@ def page(title, body, built_at):
   .filter button::before {{ display: inline-block; margin-right: .45em; vertical-align: .1em; }}
   [data-show="music"], [data-category="music"] {{ --dot: var(--music); }}
   [data-show="film"], [data-category="film"] {{ --dot: var(--film); }}
-  [data-show="arts"], [data-category="arts"] {{ --dot: var(--arts); }}
   h2 {{ margin: 2.25rem 0 .5rem; color: #777; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }}
   .day.first h2 {{ margin-top: 0; }}
   /* Until the script picks the page, show the first three days, so the whole month never flashes up. */
