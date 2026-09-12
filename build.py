@@ -186,6 +186,11 @@ def read_coolidge(source):
     return events
 
 
+# Ticketmaster's own type for each show ("segment"), so comedy and drag nights at a music venue go under
+# arts. Comedy and theater are both Arts & Theatre there. Others, like Sports, keep the venue's category.
+TICKETMASTER_SEGMENTS = {"Music": "music", "Film": "film", "Arts & Theatre": "arts", "Miscellaneous": "arts"}
+
+
 def read_ticketmaster(source):
     """Ticketmaster venues (the Paradise), by Discovery API venue id. The API needs a free key, read from the
     TICKETMASTER_KEY environment variable (a repository secret on GitHub); without one these are skipped."""
@@ -205,7 +210,11 @@ def read_ticketmaster(source):
         clock = None
         if start.get("localTime") and not start.get("timeTBA"):
             clock = datetime.strptime(start["localTime"], "%H:%M:%S").time()
-        events.append(event(source, item["name"], date.fromisoformat(start["localDate"]), clock, link=item.get("url", "")))
+        listing = event(source, item["name"], date.fromisoformat(start["localDate"]), clock, link=item.get("url", ""))
+        types = item.get("classifications") or []
+        primary = next((kind for kind in types if kind.get("primary")), types[0] if types else {})
+        listing["category"] = TICKETMASTER_SEGMENTS.get((primary.get("segment") or {}).get("name"), source["category"])
+        events.append(listing)
     return events
 
 
