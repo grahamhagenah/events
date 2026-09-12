@@ -13,7 +13,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).parent
@@ -186,6 +186,57 @@ def read_coolidge(source):
     return events
 
 
+def read_alamo(source):
+    """Alamo Drafthouse loads a market's whole schedule (Boston: the Seaport) from one JSON file."""
+    data = json.loads(fetch(source["url"]))["data"]
+    titles = {item["slug"]: (item.get("show") or {}).get("title") for item in data["presentations"]}
+    market = urlsplit(source["url"]).path.rstrip("/").rsplit("/", 1)[-1]
+    events = []
+    for session in data["sessions"]:
+        title = titles.get(session["presentationSlug"])
+        if session.get("isHidden") or session.get("status") in ("PAST", "CANCELED", "CANCELLED") or not title:
+            continue
+        # The theater's local time; a midnight show is dated the night it starts, not the business day.
+        start = datetime.fromisoformat(session["showTimeClt"])
+        link = f"https://drafthouse.com/{market}/show/{session['presentationSlug']}"
+        events.append(event(source, title, start.date(), start.time(), link=link))
+    return events
+
+
+LANDMARK_API = "https://www.landmarktheatres.com/api/gatsby-source-boxofficeapi"
+
+
+def read_landmark(source):
+    """Landmark theaters (Kendall Square), by theater id, through the schedule service their site uses."""
+    today = datetime.now(BOSTON).date()
+    theater = json.dumps({"id": source["url"], "timeZone": "America/New_York"}, separators=(",", ":"))
+    query = urlencode({
+        "from": f"{today}T03:00:00",
+        "to": f"{today + timedelta(days=DAYS_AHEAD + 1)}T03:00:00",
+        "theaters": theater,
+    })
+    schedule = json.loads(fetch(f"{LANDMARK_API}/schedule?{query}"))[source["url"]]["schedule"]
+    if not schedule:
+        return []
+    # The schedule has only film ids; titles come separately, all at once.
+    films = json.loads(fetch(f"{LANDMARK_API}/movies?" + urlencode([("ids", film) for film in schedule])))
+    titles = {film["id"]: film["title"] for film in films}
+    events = []
+    for film, days in schedule.items():
+        for showings in days.values():
+            for showing in showings:
+                if showing.get("isExpired") or film not in titles:
+                    continue
+                start = datetime.fromisoformat(showing["startsAt"])
+                tickets = next(
+                    (entry["urls"][0] for entry in (showing.get("data") or {}).get("ticketing", [])
+                     if entry.get("type") == "DESKTOP" and entry.get("urls")),
+                    "",
+                )
+                events.append(event(source, titles[film], start.date(), start.time(), link=tickets))
+    return events
+
+
 # Ticketmaster's own type for each show ("segment"), so comedy and drag nights at a music venue go under
 # arts. Comedy and theater are both Arts & Theatre there. Others, like Sports, keep the venue's category.
 TICKETMASTER_SEGMENTS = {"Music": "music", "Film": "film", "Arts & Theatre": "arts", "Miscellaneous": "arts"}
@@ -259,6 +310,8 @@ READERS = {
     "jsonld": read_jsonld,
     "coolidge": read_coolidge,
     "ticketmaster": read_ticketmaster,
+    "alamo": read_alamo,
+    "landmark": read_landmark,
     "ics": read_ics,
 }
 

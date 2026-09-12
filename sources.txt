@@ -7,6 +7,8 @@
 #   coolidge   the Coolidge Corner Theatre's showtimes page
 #   ticketmaster  a Ticketmaster venue id in place of the URL (the Paradise); needs the TICKETMASTER_KEY secret.
 #                 Find a venue's id with Actions → "Find a Ticketmaster venue" on GitHub.
+#   alamo      an Alamo Drafthouse market's schedule JSON (Boston, which is the Seaport)
+#   landmark   a Landmark Theatres theater id in place of the URL (Kendall Square)
 #   ics        an iCalendar feed
 
 # Music
@@ -22,6 +24,8 @@ ticketmaster  KovZpZAaFnJA   music   Somerville Theatre
 # Film
 jsonld     https://brattlefilm.org/coming-soon/   film   Brattle
 coolidge   https://coolidge.org/showtimes   film   Coolidge Corner
+landmark   X019B   film   Kendall Square
+alamo      https://drafthouse.com/s/mother/v2/schedule/market/boston   film   Alamo Drafthouse
 
 # Arts and festivals
 ics        https://www.cambridgema.gov/arts/Calendar.ics   arts   Cambridge Arts
