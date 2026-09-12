@@ -256,16 +256,14 @@ def clock(moment):
 
 
 def render_row(item):
-    times = item["times"]
-    detail = item["detail"]
-    if len(times) > 1:
-        detail = "also " + ", ".join(clock(moment) for moment in times[1:])
-    detail_html = f'<span class="detail">{html.escape(detail)}</span>' if detail else ""
+    """Laid out like the newsfeed: the venue on the left, then the name with that day's times after it."""
+    # data-time lets the page drop today's showings once they've started.
+    times = "".join(f'<time data-time="{moment:%H:%M}">{clock(moment)}</time>' for moment in item["times"])
+    detail = f'<span class="detail">{html.escape(item["detail"])}</span>' if item["detail"] else ""
     return (
-        f'<li data-category="{item["category"]}">'
-        f'<span class="time">{clock(times[0]) if times else ""}</span>'
-        f'<span class="what"><a class="title" href="{html.escape(item["link"])}">{html.escape(item["title"])}</a>{detail_html}</span>'
-        f'<span class="venue">{html.escape(item["venue"])}</span></li>'
+        f'<li data-category="{item["category"]}"><span class="source"><span>{html.escape(item["venue"])}</span></span>'
+        f'<div class="headline"><a class="title" href="{html.escape(item["link"])}">{html.escape(item["title"])}</a>'
+        f'{f"<span class=times>{times}</span>" if times else ""}{detail}</div></li>'
     )
 
 
@@ -311,6 +309,19 @@ INDEX_JS = """
     if (day.dataset.date < today) day.remove();
     else day.querySelector(".relative").textContent =
       day.dataset.date === today ? "Today" : day.dataset.date === tomorrow ? "Tomorrow" : "";
+  }
+
+  // Today lists only what's still to come: showings drop off once they've started, and an event goes
+  // once its last one has. Events without a time stay all day.
+  const now = new Date().toLocaleTimeString("en-GB", { timeZone: "America/New_York", hour: "2-digit", minute: "2-digit" });
+  const todays = document.querySelector(`.day[data-date="${today}"]`);
+  if (todays) {
+    for (const li of todays.querySelectorAll("li")) {
+      const times = li.querySelectorAll("time");
+      for (const t of times) if (t.dataset.time < now) t.remove();
+      if (times.length && !li.querySelector("time")) li.remove();
+    }
+    if (!todays.querySelector("li")) todays.remove();
   }
 
   // The filter shows every category or just one, and is remembered in this browser.
@@ -371,9 +382,9 @@ def page(title, body, built_at):
   .filter button {{ padding: 0; border: 0; background: none; color: #666; font: inherit; font-size: .8rem; cursor: pointer; }}
   .filter button:hover {{ color: #999; }}
   .filter button[aria-pressed="true"] {{ color: #fff; }}
-  .filter button:not([data-show="all"])::before, li::before {{
-    content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--dot); }}
-  .filter button::before {{ margin-right: .45em; vertical-align: .1em; }}
+  .filter button:not([data-show="all"])::before, .source::before, li::before {{
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--dot); }}
+  .filter button::before {{ display: inline-block; margin-right: .45em; vertical-align: .1em; }}
   [data-show="music"], [data-category="music"] {{ --dot: var(--music); }}
   [data-show="film"], [data-category="film"] {{ --dot: var(--film); }}
   [data-show="arts"], [data-category="arts"] {{ --dot: var(--arts); }}
@@ -381,26 +392,27 @@ def page(title, body, built_at):
   .day:first-of-type h2 {{ margin-top: 0; }}
   .relative:not(:empty) {{ color: #fff; margin-right: .6em; }}
   ul {{ margin: 0; padding: 0; list-style: none; }}
-  li {{ position: relative; display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 1rem; align-items: baseline; padding: .35rem 0; }}
+  /* Rows as in the newsfeed: the venue beside its dot, then the name, one line tall, times after it. */
+  li {{ position: relative; display: grid; grid-template-columns: 10rem 1fr; gap: 1.25rem; align-items: baseline; padding: .4rem 0; }}
   li[hidden], .day[hidden] {{ display: none; }}
-  li::before {{ position: absolute; left: -.9rem; top: .9em; }}
-  .time, .venue, .detail {{ color: #666; font-size: .8em; }}
-  .time {{ white-space: nowrap; }}
-  .what {{ display: flex; align-items: baseline; gap: .6em; min-width: 0; }}
-  .what .title {{ min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
-  .detail {{ flex: 0 1 auto; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
-  .venue {{ max-width: 11rem; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: right; }}
+  li::before {{ display: none; }}
+  .source {{ position: relative; min-width: 0; color: #666; font-size: .8em; }}
+  .source > span {{ display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
+  .source::before {{ position: absolute; left: -.9rem; top: .5em; }}
+  .headline {{ display: flex; align-items: baseline; min-width: 0; }}
+  .headline .title {{ min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
+  .times, .detail {{ margin-left: .6em; color: #666; font-size: .8em; white-space: nowrap; }}
+  .times {{ flex: none; }}
+  .times time + time::before {{ content: ", "; }}
+  .detail {{ min-width: 0; overflow: hidden; text-overflow: ellipsis; }}
   @media (max-width: 34rem) {{
-    /* On a phone: time and place above, the name below it in full. */
-    li {{ grid-template-columns: auto 1fr; grid-template-areas: "time venue" "what what"; gap: 0 .6rem; padding: .45rem 0; }}
-    li::before {{ top: .55em; }}
-    .time {{ grid-area: time; }}
-    .venue {{ grid-area: venue; text-align: left; max-width: none; }}
-    .time:empty {{ display: none; }}
-    .time:empty ~ .venue {{ grid-column: 1 / -1; }}
-    .what {{ grid-area: what; display: block; }}
-    .what .title {{ white-space: normal; }}
-    .detail {{ display: block; white-space: normal; }}
+    /* On a phone one line is too few words, so names wrap in full, below the venue. */
+    li {{ grid-template-columns: 1fr; gap: 0; }}
+    .headline {{ display: block; }}
+    .headline .title, .times, .detail {{ white-space: normal; }}
+    /* The dot moves beside the name's first line, below the venue. */
+    .source::before {{ display: none; }}
+    li::before {{ display: block; position: absolute; left: -.9rem; top: calc(.4rem + 1.16em + .725em - 1px); }}
   }}
   a {{ color: #fff; text-decoration: none; }}
   a:hover {{ text-decoration: underline; }}
