@@ -707,39 +707,35 @@ def restored(kept, source):
     )
 
 
-def previous_listings():
-    """What the live page was built from, for sources that fail this time. Empty if it can't be had."""
+def previous_build():
+    """The live page's listings.json: what it was built from, and which sources were failing. Empty if it
+    can't be had."""
     try:
-        return json.loads(fetch(LISTINGS_URL)).get("sources", {})
+        return json.loads(fetch(LISTINGS_URL))
     except Exception as error:
-        print(f"  no earlier listings to fall back on ({error})", file=sys.stderr)
+        print(f"  no earlier build to fall back on ({error})", file=sys.stderr)
         return {}
 
 
-def main():
-    sources = read_sources()
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        results = list(pool.map(load, sources))
-
-    built_at = datetime.now(timezone.utc)
-    today = datetime.now(BOSTON).date()
+def gather(results, previous, built_at):
+    """Each source's upcoming listings: fresh when it loaded, else its last good ones from the previous build
+    if they're recent enough. Returns the events; the sources that failed with nothing to fall back on; the
+    ones shown from before, with when; the listings to save for next time; and why each failing one failed."""
+    today = built_at.astimezone(BOSTON).date()
     last_day = today + timedelta(days=DAYS_AHEAD)
-    events, failed, stale, listings, previous = [], [], [], {}, None
+    kept_sources = previous.get("sources", {})
+    events, failed, stale, listings, errors = [], [], [], {}, {}
     for source, found, error in results:
         fetched = built_at
+        kept = kept_sources.get(source["name"])
         if not error and not any(today <= item["date"] <= last_day for item in found):
             # A source that had listings coming up last time and has none now is more likely broken for the
             # moment (a feed served empty) than suddenly without shows, so it gets the same fallback.
-            if previous is None:
-                previous = previous_listings()
-            kept = previous.get(source["name"], {})
-            if any(date.fromisoformat(item["date"]) >= today for item in kept.get("events", [])):
+            if kept and any(date.fromisoformat(item["date"]) >= today for item in kept["events"]):
                 error = "returned no listings"
         if error:
+            errors[source["name"]] = str(error)
             print(f"✗ {source['name']}: {error}", file=sys.stderr)
-            if previous is None:
-                previous = previous_listings()
-            kept = previous.get(source["name"])
             if not kept or built_at - datetime.fromisoformat(kept["fetched"]) > FALLBACK_LIMIT:
                 failed.append(source["name"])
                 continue
@@ -753,7 +749,27 @@ def main():
             print(f"✓ {source['name']}: {len(upcoming)} in the next {DAYS_AHEAD} days ({len(found)} listed)")
         listings[source["name"]] = {"fetched": fetched.isoformat(), "events": [saved(item) for item in upcoming]}
         events += upcoming
+    return events, failed, stale, listings, errors
 
+
+def still_failing(errors, previous, built_at):
+    """Each failing source's error and when it started failing, carried over from build to build, so
+    alerts.py can tell a hiccup from an outage."""
+    before = previous.get("failing", {})
+    return {
+        name: {"since": before.get(name, {}).get("since", built_at.isoformat()), "error": error}
+        for name, error in errors.items()
+    }
+
+
+def main():
+    sources = read_sources()
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        results = list(pool.map(load, sources))
+
+    built_at = datetime.now(timezone.utc)
+    previous = previous_build()
+    events, failed, stale, listings, errors = gather(results, previous, built_at)
     if len(failed) + len(stale) == len(sources):
         sys.exit("No source loaded — not writing the page.")
 
@@ -761,7 +777,8 @@ def main():
     OUT_DIR.mkdir(exist_ok=True)
     shutil.copytree(ROOT / "static", OUT_DIR, dirs_exist_ok=True)
     (OUT_DIR / "index.html").write_text(render_index(events, sources, failed, stale, built_at))
-    (OUT_DIR / "listings.json").write_text(json.dumps({"built": built_at.isoformat(), "sources": listings}, ensure_ascii=False))
+    record = {"built": built_at.isoformat(), "sources": listings, "failing": still_failing(errors, previous, built_at)}
+    (OUT_DIR / "listings.json").write_text(json.dumps(record, ensure_ascii=False))
     print(f"Wrote {OUT_DIR.relative_to(ROOT)}/index.html with {len(events)} listings, and listings.json")
 
 

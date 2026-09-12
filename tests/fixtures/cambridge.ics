@@ -1,0 +1,110 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ddaysoftware.com//NONSGML DDay.iCal 1.0//EN
+BEGIN:VEVENT
+CONTACT:
+DESCRIPTION:Free circus on Cambridge Common\n For more information - https:
+ //www.cambridgema.gov/arts/Calendar/2026/09/06/breadandpuppetcircus
+DTEND:20260906T220000Z
+DTSTAMP:20260912T185723Z
+DTSTART:20260906T210000Z
+LOCATION:
+SEQUENCE:0
+SUMMARY:Bread & Puppet 'Upside Down World Circus'
+UID:{1FF0DF3F-03BC-477D-A0BD-155C8F5DCB71}@www.cambridgema.gov
+URL:https://www.cambridgema.gov/arts/Calendar/2026/09/06/breadandpuppetcirc
+ us
+END:VEVENT
+BEGIN:VEVENT
+CONTACT:
+DESCRIPTION:Shop for paintings\, prints\, clothing\, ceramics\, and all sor
+ ts of locally-made creations by more than 70 artists when you visit their 
+ studios and in group exhibitions in Common Venues throughout the city.\n F
+ or more information - https://www.cambridgema.gov/arts/Calendar/2026/09/19
+ /openstudiossept19
+DTEND:20260919T220000Z
+DTSTAMP:20260912T185723Z
+DTSTART:20260919T160000Z
+LOCATION:
+SEQUENCE:0
+SUMMARY:Cambridge Arts Open Studios
+UID:{8918C7D4-3872-4515-8F13-4F588B8C6FBE}@www.cambridgema.gov
+URL:https://www.cambridgema.gov/arts/Calendar/2026/09/19/openstudiossept19
+END:VEVENT
+BEGIN:VEVENT
+CONTACT:
+DESCRIPTION:Shop for paintings\, prints\, clothing\, ceramics\, and all sor
+ ts of locally-made creations by more than 70 artists when you visit their 
+ studios and in group exhibitions in Common Venues throughout the city. \n 
+ For more information - https://www.cambridgema.gov/arts/Calendar/2026/09/2
+ 0/openstudiossept20
+DTEND:20260920T220000Z
+DTSTAMP:20260912T185723Z
+DTSTART:20260920T160000Z
+LOCATION:
+SEQUENCE:0
+SUMMARY:Cambridge Arts Open Studios
+UID:{CCB39D1C-AFE0-4BF1-8DFA-AF2B676331ED}@www.cambridgema.gov
+URL:https://www.cambridgema.gov/arts/Calendar/2026/09/20/openstudiossept20
+END:VEVENT
+BEGIN:VEVENT
+CONTACT:
+DESCRIPTION:Build together with an assortment of moveable parts.\n For more
+  information - https://www.cambridgema.gov/arts/Calendar/2026/09/24/mitchr
+ yersonplaymore
+DTEND:20260924T220000Z
+DTSTAMP:20260912T185723Z
+DTSTART:20260924T200000Z
+LOCATION:
+SEQUENCE:0
+SUMMARY:'Playmore'
+UID:{152082C5-152A-4960-8D53-51C3E4D21FA2}@www.cambridgema.gov
+URL:https://www.cambridgema.gov/arts/Calendar/2026/09/24/mitchryersonplaymo
+ re
+END:VEVENT
+BEGIN:VEVENT
+CONTACT:
+DESCRIPTION:See how play spaces take shape\, from first sketch to finished 
+ structures\, in a hands-on exhibition of playground design by Cambridge ar
+ tist Mitch Ryerson.\n For more information - https://www.cambridgema.gov/a
+ rts/Calendar/2026/10/05/mitchryersongalleryreception
+DTEND:20261005T230000Z
+DTSTAMP:20260912T185723Z
+DTSTART:20261005T210000Z
+LOCATION:
+SEQUENCE:0
+SUMMARY:Reception: See How Playground Structures Are Hand-Crafted By Cambri
+ dge Artist Mitch Ryerson
+UID:{4A0B83EB-7EA2-4514-91CF-C588F5A92E79}@www.cambridgema.gov
+URL:https://www.cambridgema.gov/arts/Calendar/2026/10/05/mitchryersongaller
+ yreception
+END:VEVENT
+BEGIN:VEVENT
+CONTACT:
+DESCRIPTION:We Want To $upport Your Art!\n\n For more information - https:/
+ /www.cambridgema.gov/arts/Calendar/2026/10/15/grantapplicationsdue
+DTEND:20261016T033000Z
+DTSTAMP:20260912T185723Z
+DTSTART:20261015T040000Z
+LOCATION:
+SEQUENCE:0
+SUMMARY:Grant Applications Due
+UID:{029C5551-65BD-45C1-8E01-84B5F56915A1}@www.cambridgema.gov
+URL:https://www.cambridgema.gov/arts/Calendar/2026/10/15/grantapplicationsd
+ ue
+END:VEVENT
+BEGIN:VEVENT
+CONTACT:
+DESCRIPTION:Free Hands-on Workshop\n For more information - https://www.cam
+ bridgema.gov/arts/Calendar/2026/10/19/mitchryersonreception
+DTEND:20261019T220000Z
+DTSTAMP:20260912T185723Z
+DTSTART:20261019T200000Z
+LOCATION:
+SEQUENCE:0
+SUMMARY:Outdoor maker space to build and play
+UID:{8FCFE511-CE6E-4576-A46A-869EFCA0E804}@www.cambridgema.gov
+URL:https://www.cambridgema.gov/arts/Calendar/2026/10/19/mitchryersonrecept
+ ion
+END:VEVENT
+END:VCALENDAR

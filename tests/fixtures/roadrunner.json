@@ -1,0 +1,1067 @@
+{
+ "meta": {
+  "total": 45,
+  "locale": "en-US",
+  "page": 1,
+  "rows": 100
+ },
+ "events": [
+  {
+   "eventId": "1450874",
+   "active": true,
+   "createdUTC": "2026-05-14T18:35:47",
+   "modifiedUTC": "2026-07-15T16:25:14",
+   "locale": "en-US",
+   "localeAvailable": {
+    "1": "en-US"
+   },
+   "title": {
+    "presentedBy": null,
+    "presentedByText": null,
+    "headliners": "<a href=\"/artists/1110289/charles-wesley-godwin-tickets\">Charles Wesley Godwin</a>",
+    "headlinersText": "Charles Wesley Godwin",
+    "supporting": "<a href=\"/artists/1120509/lily-fitts-tickets\">Lily Fitts</a>",
+    "supportingText": "Lily Fitts",
+    "tour": "The Christian Name Tour",
+    "eventTitle": "<a href=\"/artists/1110289/charles-wesley-godwin-tickets\">Charles Wesley Godwin</a>",
+    "eventTitleText": "Charles Wesley Godwin"
+   },
+   "age": "All Ages",
+   "publishStatus": 1,
+   "private": false,
+   "currency": "USD",
+   "currencySymbol": "$",
+   "eventDateTime": "2026-09-12T20:00:00",
+   "eventDateTimeZone": "America/New_York",
+   "eventDateTimeZoneAbbr": "EDT",
+   "eventDateTimeUTC": "2026-09-13T00:00:00",
+   "eventDateTimeISO": "2026-09-12T20:00:00-04:00",
+   "additionalDates": [],
+   "expirationDateTime": "2026-09-13T03:00:00",
+   "expirationDateTimeUTC": "2026-09-13T07:00:00",
+   "doorDateTime": "2026-09-12T19:00:00",
+   "doorDateTimeUTC": "2026-09-12T23:00:00",
+   "announceDateTime": "2026-05-19T10:00:00",
+   "announceDateTimeTimeZone": "America/New_York",
+   "announceDateTimeUTC": "2026-05-19T14:00:00",
+   "presaleDateTime": null,
+   "presaleDateTimeTimeZone": "America/New_York",
+   "presaleDateTimeUTC": null,
+   "presaleEndDateTime": null,
+   "presaleEndDateTimeTimeZone": "America/New_York",
+   "presaleEndDateTimeUTC": null,
+   "onsaleDateTime": "2026-05-29T10:00:00",
+   "onsaleDateTimeTimeZone": "America/New_York",
+   "onsaleDateTimeZoneAbbr": "EDT",
+   "onsaleDateTimeUTC": "2026-05-29T14:00:00",
+   "ticketing": {
+    "statusId": 1,
+    "status": "Buy Tickets",
+    "url": "https://www.axs.com/events/1450874/charles-wesley-godwin-tickets",
+    "eventUrl": "https://www.axs.com/events/1450874/charles-wesley-godwin-tickets",
+    "ticketLinkExists": true
+   },
+   "ticketPrice": null,
+   "ticketPriceLow": "$0",
+   "ticketPriceHigh": "$0",
+   "doorPrice": null,
+   "doorPriceLow": "$0",
+   "doorPriceHigh": "$0",
+   "bio": "<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">For a while there, Charles Wesley Godwin was in something of a funk. A typically prolific writer, and one who over his first two critically-acclaimed albums had proven himself to be a reflective and soulful songwriter and singer &mdash; a storyteller in the vein of his heroes like Kris Kristofferson, Willie Nelson and Bruce Springsteen&mdash; Godwin found himself in a state of stasis last year. To hear him tell it, he was frozen in place &mdash; unable to find the words to what he hoped would become his new songs and under a level of pressure he&rsquo;d never previously experienced.</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">And yet, what would ultimately inspire the man was right in front of him all along: family.</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&ldquo;I had to get back to the basics,&rdquo; says the introspective, self-aware artist of what finally set him and his new songs free. &ldquo;I decided I was going to write about my life and my family. It&rsquo;s where my heart was guiding me: to be super personal and dig right into the weeds of my life.&rdquo; The resulting LP, Family Ties &mdash;Godwin&rsquo;s forthcoming third album, set for release on September 22 via Big Loud Records &mdash; is a truly stunning achievement, and the culmination of years of hard work to arrive at this point.</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">Demo&rsquo;ed on a Tascam 4-track (thanks to his love for Springsteen&rsquo;s seminal Nebraska) and then recorded with his bandmate and longtime producer, Al Torrence, at one of his dream studios, Echo Mountain in Asheville, North Carolina, Family Ties is a portrait of home, of relationships, of lessons learned and lived. Perhaps most excitingly, the 19-track release showcases a tunesmith at the peak of his powers &mdash; melding melody with memories, workmanship with wisdom.</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&ldquo;All it was was just a matter of time and continued grinding,&rdquo; Godwin says without hesitation of what he believes has now allowed him to meet this moment &mdash; ready to unveil his most intensely personal and accomplished material yet, all while continually playing to some of the biggest crowds of his career.</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">The songs that comprise Family Ties are themselves portals into Godwin&rsquo;s life &mdash; tuneful tales of the native West Virginian&rsquo;s friends, family and foundation. Yes, Family Ties is an intensely intimate affair &mdash; images set to tune, so many of them specifically created for his own family members. There&rsquo;s the unflinching &ldquo;Miner Imperfections,&rdquo; penned for his father; the mournful and contemplative &ldquo;The Flood&rdquo; for his mother; the beatific &ldquo;Gabriel&rdquo; for his son (&ldquo;I guess what I am saying/is I am here to stick with you/if I could I&rsquo;d never utter a single word that isn&rsquo;t true&rdquo;); the mournful yet hopeful &ldquo;Dance in Rain&rdquo; for his daughter; and the love letter that is the slow-rolling &ldquo;Willing and Able&rdquo; for his wife.</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&ldquo;It feels like I&rsquo;m exactly where I&rsquo;m supposed to be,&rdquo; Godwin declares of the fortunate place he and his musical journey have taken him. There&rsquo;s confidence behind this statement, to be sure, but Godwin can readily admit it was hardly a given he&rsquo;d ever make it here. Having not taken up the guitar until roughly age 20, and only performing for others when his friends encouraged him one night to do so while studying abroad in Estonia, building his career has been a steady &mdash; albeit highly fruitful &mdash; climb. He started gigging intensely in the mid-2010s and independently released his stunning debut album, Seneca, in 2019. Like so many musicians however, the pandemic would put a wrinkle in his plans: Godwin explains how he was unable to properly tour behind Seneca and, in turn, couldn&rsquo;t build up the momentum and fanbase he&rsquo;d hoped for.</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">Thankfully, hard work and dedication rarely go unnoticed: when musicians were able to return to the stage, Godwin and his longtime band, the Allegheny High, hit the road behind his second album, 2021&rsquo;s How The Mighty Fall, and pounded the pavement in a major way. They rarely took breaks from the road, performing every night &ldquo;as if we were at Madison Square Garden&rdquo; even when the crowds weren&rsquo;t always massive. It helped that he had the support of his bandmates: Godwin&rsquo;s affection for Allegheny High is palpable. &ldquo;They&rsquo;re my ride-or-dies,&rdquo; he says of the Allegheny High. &ldquo;They believed in me enough to go out on the road with me even when I couldn&rsquo;t afford to pay a band. Other people aren&rsquo;t willing to do that.&rdquo;</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&ldquo;To me, the live show has been the great equalizer,&rdquo; Godwin continues. &ldquo;After COVID, we went out there and just played our asses off everywhere all the time, every week. The tour never stopped. And we just built it ear by ear. We were just making this thing grow organically by putting on such a good show with so much heart. Eventually, I got momentum back on my side and just kept on going.&rdquo;</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">This trend &mdash; building up his fanbase in a grassroots manner and letting the music and live show speak for itself &mdash;continues to this day: whether he&rsquo;s headlining his own rowdy, raucous gigs, or opening for close friend and musical comrade, Zach Bryan, Godwin says his live performances have never been more rewarding. Or lively, for that matter. Perhaps it&rsquo;s because, as he proudly says, the brand of music he traffics in &mdash; namely story songs with a head full of heart and history &mdash; seems to be having a true moment. &ldquo;My shows will range from like 18-year-olds to 80-year-olds,&rdquo; Godwin notes with a smile of his diverse, highly-enthusiastic and ever-growing fanbase. &ldquo;That&rsquo;s a pretty unique thing.&rdquo;</div>\r\n<div style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">&nbsp;</div>\r\n<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">As for how his life has changed in recent times? Godwin says if anything it&rsquo;s just become ever even more fulfilling. &ldquo;There&rsquo;s a lot more people at my shows and they&rsquo;re a lot more excited than ever before,&rdquo; he says with a sense of satisfaction. &ldquo;I don&rsquo;t feel like a fish out of water anymore. I had fun when it was just 100 people back in 2021. Now that it&rsquo;s 10 or 20 times that, it&rsquo;s just even better.\"</div>",
+   "description": "$.25 from each ticket purchased will go to The Shout Syndicate, a Boston-based, volunteer-run fundraising effort who raises money to help fund youth-led arts programs at proven non-profit creative youth development organizations in Greater Boston. Housed at The Boston Foundation, The Shout Syndicate works in partnership with the Mayor's Office of Arts &amp; Culture's creative plan, Boston Creates. https://www.theshoutsyndicate.com/",
+   "venue": {
+    "venueId": "128223",
+    "active": true,
+    "locale": "en-US",
+    "localeAvailable": {
+     "1": "en-US"
+    },
+    "title": "Roadrunner",
+    "address_line": "89 Guest Street, Boston, MA 02135",
+    "address": "89 Guest Street",
+    "city": "Boston",
+    "state": "MA",
+    "postalCode": "02135",
+    "country": "United States",
+    "countryCode": "US",
+    "timezone": "America/New_York",
+    "ada": null,
+    "keywords": [],
+    "skinCode": "roadrunner",
+    "currency": "USD",
+    "media": {
+     "10": {
+      "media_id": "4747834",
+      "width": 318,
+      "height": 187,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_10_64b93665ef9a3.jpg"
+     },
+     "21": {
+      "media_id": "4747835",
+      "width": 678,
+      "height": 399,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_21_64b9366627441.jpg"
+     },
+     "11": {
+      "media_id": "4747836",
+      "width": 238,
+      "height": 140,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_11_64b936665fdff.jpg"
+     },
+     "12": {
+      "media_id": "4747837",
+      "width": 134,
+      "height": 79,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_12_64b9366677082.jpg"
+     }
+    },
+    "links": [
+     {
+      "link_id": 1120837,
+      "link_title": "Facebook Page Co-Host",
+      "link_type_id": "24",
+      "link_href": "https://www.facebook.com/BoweryBoston/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120838,
+      "link_title": "Parking",
+      "link_type_id": "17",
+      "link_href": "https://bostonlandingdevelopment.com/map-directions/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120839,
+      "link_title": "Restaurants",
+      "link_type_id": "22",
+      "link_href": "https://bostonlandingdevelopment.com/shop-eat/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120840,
+      "link_title": "FAQ",
+      "link_type_id": "52",
+      "link_href": "https://roadrunnerboston.com/venue-info/",
+      "link_target": "_blank"
+     }
+    ]
+   },
+   "associations": {
+    "performerIds": [
+     "1110289",
+     "1120509"
+    ],
+    "headliners": [
+     {
+      "performerId": "1110289",
+      "active": true,
+      "locale": "en-US",
+      "keywords": [],
+      "bio": "<div class=\"MsoNormal\" style=\"box-sizing: border-box; word-break: break-word; overflow-wrap: break-word; color: #183247; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 14px;\">\r\n<p>Charles Wesley Godwin has steadily become one of the most respected voices in</p>\r\n<p>country and Americana music since the release of his beloved 2019 debut, Seneca.</p>\r\n<p>Alongside his longtime band, the Allegheny High, the West Virginia singer-songwriter</p>\r\n<p>has earned a reputation as one of the genre's most powerful live performers, with recent</p>\r\n<p>highlights including a sold-out Red Rocks headline debut, dates opening Eric Church's</p>\r\n<p>Free The Machine Tour, and appearances on The Late Show with Stephen Colbert,</p>\r\n<p>Jimmy Kimmel Live!, CBS Saturday Sessions, and ESPN's SportsCenter.</p>\r\n<p>&nbsp;</p>\r\n<p>In 2026, Godwin released his fourth full-length album, Christian Name, his most</p>\r\n<p>personal and spiritually profound work to date. Written in the wake of unimaginable</p>\r\n<p>personal loss, the album explores grief, redemption, healing, and renewed faith across</p>\r\n<p>twelve deeply affecting songs. Featuring collaborations with Luke Combs on \"Better</p>\r\n<p>That Way\" and Wyatt Flores on \"Hey There, Son,\" Christian Name builds on the acclaim</p>\r\n<p>of Family Ties while showcasing the strongest songwriting and most emotionally</p>\r\n<p>resonant performances of Godwin's career.</p>\r\n</div>",
+      "media": {
+       "20": {
+        "media_id": "5392205",
+        "width": 564,
+        "height": 564,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_20_6a0c735d287dc.jpg"
+       },
+       "7": {
+        "media_id": "5392206",
+        "width": 220,
+        "height": 220,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_7_6a0c735d756a8.jpg"
+       },
+       "24": {
+        "media_id": "5392207",
+        "width": 322,
+        "height": 322,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_24_6a0c735db4860.jpg"
+       },
+       "19": {
+        "media_id": "5392208",
+        "width": 678,
+        "height": 399,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_19_6a0c744c24a29.jpg"
+       },
+       "5": {
+        "media_id": "5392209",
+        "width": 318,
+        "height": 187,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_5_6a0c744c739b4.jpg"
+       },
+       "6": {
+        "media_id": "5392210",
+        "width": 238,
+        "height": 140,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_6_6a0c744cafa97.jpg"
+       },
+       "9": {
+        "media_id": "5392211",
+        "width": 134,
+        "height": 79,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_9_6a0c744ce840e.jpg"
+       },
+       "88": {
+        "media_id": "5392212",
+        "width": 1200,
+        "height": 628,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_88_6a0c744d4784e.png"
+       }
+      },
+      "links": [
+       {
+        "link_id": "1098770",
+        "link_title": "Official Website",
+        "link_type_id": "8",
+        "link_href": "http://www.charleswgodwin.com/",
+        "link_target": "_blank"
+       },
+       {
+        "link_id": "1098771",
+        "link_title": "Facebook Page",
+        "link_type_id": "12",
+        "link_href": "https://www.facebook.com/charlesgodwinmusic/",
+        "link_target": "_blank"
+       },
+       {
+        "link_id": "1110833",
+        "link_title": "Instagram",
+        "link_type_id": "49",
+        "link_href": "https://www.instagram.com/charleswgodwin?igsh=aGVuc2Z2YmZudmZk",
+        "link_target": "_blank"
+       }
+      ]
+     }
+    ],
+    "supportingActs": [
+     {
+      "performerId": "1120509",
+      "active": true,
+      "locale": "en-US",
+      "keywords": [],
+      "bio": "<div class=\"elementToProof\">24-year-old Lily Fitts blends authentic instrumentation with a powerfully soft yet raw vocal tone, creating alternative indie-folk music rooted in emotional honesty and a sense of sharp lyrical truth. Influenced by her Boston upbringing and a wide range of musical inspirations, her sound carries warmth, depth, and an unmistakable sincerity - intended to connect, heal and empower. Her influences span genres, and she continues to shape a sound that feels both fresh and familiar within the indie folk/Americana space.</div>\r\n<div class=\"elementToProof\">&nbsp;</div>\r\n<div class=\"elementToProof\">Lily has been sharing music online since the age of 9, and her acoustic covers on TikTok have drawn attention from artists like Noah Kahan, Zach Bryan, The Lumineers, Sam Barber, and more, eventually leading to her first-ever live performance with Zach Bryan at his sold-out Crypto Arena show in LA. Since then, she&rsquo;s amassed over 34 million streams across DSPs, marking her as a rising voice in the indie-folk world.</div>\r\n<div class=\"elementToProof\">&nbsp;</div>\r\n<div class=\"elementToProof\">Over the last year and a half, Lily has been writing and recording her debut project, set to release this summer. In that time, she&rsquo;s hit the road supporting Michael Marcagi, Sam Barber, and Myles Smith, and has played major festivals including Bonnaroo, Summerfest, Lovin' Life, Springfest, and Extra Innings. This summer, she&rsquo;ll take the stage in London for the first time at Hyde Park, performing alongside Noah Kahan, Gracie Abrams, FINNEAS, and Gigi Perez.</div>",
+      "media": {
+       "19": {
+        "media_id": "5312662",
+        "width": 678,
+        "height": 399,
+        "file_name": "https://images.discovery-prod.axs.com/2026/01/lily-fitts_01-26-26_19_6977f1fdf3813.jpg"
+       },
+       "5": {
+        "media_id": "5312663",
+        "width": 318,
+        "height": 187,
+        "file_name": "https://images.discovery-prod.axs.com/2026/01/lily-fitts_01-26-26_5_6977f1fe57191.jpg"
+       },
+       "6": {
+        "media_id": "5312664",
+        "width": 238,
+        "height": 140,
+        "file_name": "https://images.discovery-prod.axs.com/2026/01/lily-fitts_01-26-26_6_6977f1feeae28.jpg"
+       },
+       "9": {
+        "media_id": "5312665",
+        "width": 134,
+        "height": 79,
+        "file_name": "https://images.discovery-prod.axs.com/2026/01/lily-fitts_01-26-26_9_6977f1ff3c8b8.jpg"
+       },
+       "20": {
+        "media_id": "5312666",
+        "width": 564,
+        "height": 564,
+        "file_name": "https://images.discovery-prod.axs.com/2026/01/lily-fitts_01-26-26_20_6977f1ffcb619.jpg"
+       },
+       "7": {
+        "media_id": "5312667",
+        "width": 220,
+        "height": 220,
+        "file_name": "https://images.discovery-prod.axs.com/2026/01/lily-fitts_01-26-26_7_6977f20017df8.jpg"
+       },
+       "24": {
+        "media_id": "5312668",
+        "width": 322,
+        "height": 322,
+        "file_name": "https://images.discovery-prod.axs.com/2026/01/lily-fitts_01-26-26_24_6977f20058de7.jpg"
+       },
+       "88": {
+        "media_id": "5312669",
+        "width": 1200,
+        "height": 628,
+        "file_name": "https://images.discovery-prod.axs.com/2026/01/lily-fitts_01-26-26_88_6977f200a27c5.jpg"
+       }
+      },
+      "links": [
+       {
+        "link_id": "1116027",
+        "link_title": "Facebook Page",
+        "link_type_id": "12",
+        "link_href": "https://www.facebook.com/lilyfittsmusic",
+        "link_target": "_none"
+       },
+       {
+        "link_id": "1116028",
+        "link_title": "Instagram",
+        "link_type_id": "49",
+        "link_href": "https://www.instagram.com/lilyfittsmusic",
+        "link_target": "_none"
+       },
+       {
+        "link_id": 1119977,
+        "link_title": "Official Website",
+        "link_type_id": "8",
+        "link_href": "https://www.lilyfittsmusic.com/",
+        "link_target": "_none"
+       }
+      ]
+     }
+    ],
+    "additionalPerformers": []
+   },
+   "media": [],
+   "relatedMedia": {
+    "1": {
+     "media_id": "5392209",
+     "width": 318,
+     "height": 187,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_5_6a0c744c739b4.jpg"
+    },
+    "2": {
+     "media_id": "5392210",
+     "width": 238,
+     "height": 140,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_6_6a0c744cafa97.jpg"
+    },
+    "3": {
+     "media_id": "5392206",
+     "width": 220,
+     "height": 220,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_7_6a0c735d756a8.jpg"
+    },
+    "4": {
+     "media_id": "5392211",
+     "width": 134,
+     "height": 79,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_9_6a0c744ce840e.jpg"
+    },
+    "23": {
+     "media_id": "5392207",
+     "width": 322,
+     "height": 322,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_24_6a0c735db4860.jpg"
+    },
+    "17": {
+     "media_id": "5392208",
+     "width": 678,
+     "height": 399,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_19_6a0c744c24a29.jpg"
+    },
+    "18": {
+     "media_id": "5392205",
+     "width": 564,
+     "height": 564,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_20_6a0c735d287dc.jpg"
+    },
+    "86": {
+     "media_id": "5392212",
+     "width": 1200,
+     "height": 628,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/charles-wesley-godwin_05-19-26_88_6a0c744d4784e.png"
+    },
+    "81": {
+     "media_id": 0,
+     "width": "1770",
+     "height": "580",
+     "file_name": "https://s.axs.com/axs/bundles/aegaxs/images/defaults/1/1_1770_580.png"
+    },
+    "102": {
+     "media_id": 0,
+     "width": "860",
+     "height": "400",
+     "file_name": "https://s.axs.com/axs/bundles/aegaxs/images/defaults/1/1_860_400.png"
+    }
+   },
+   "links": [
+    {
+     "link_id": "1098771",
+     "link_title": "Facebook Page",
+     "link_type_id": "12",
+     "link_href": "https://www.facebook.com/charlesgodwinmusic/",
+     "link_target": "_blank"
+    }
+   ],
+   "olympics": null,
+   "keywords": []
+  },
+  {
+   "eventId": "1437480",
+   "active": true,
+   "createdUTC": "2026-05-05T17:43:52",
+   "modifiedUTC": "2026-07-20T09:51:09",
+   "locale": "en-US",
+   "localeAvailable": {
+    "1": "en-US"
+   },
+   "title": {
+    "presentedBy": null,
+    "presentedByText": null,
+    "headliners": "<a href=\"/artists/1114595/mon-rovia-tickets\">Mon Rov\u00eea</a>",
+    "headlinersText": "Mon Rov\u00eea",
+    "supporting": "Sydney Rose , Sarah Julia ",
+    "supportingText": "Sydney Rose , Sarah Julia ",
+    "tour": "Bloodline Tour",
+    "eventTitle": "<a href=\"/artists/1114595/mon-rovia-tickets\">Mon Rov\u00eea</a>",
+    "eventTitleText": "Mon Rov\u00eea"
+   },
+   "age": "All Ages",
+   "publishStatus": 1,
+   "private": false,
+   "currency": "USD",
+   "currencySymbol": "$",
+   "eventDateTime": "2026-09-18T20:00:00",
+   "eventDateTimeZone": "America/New_York",
+   "eventDateTimeZoneAbbr": "EDT",
+   "eventDateTimeUTC": "2026-09-19T00:00:00",
+   "eventDateTimeISO": "2026-09-18T20:00:00-04:00",
+   "additionalDates": [],
+   "expirationDateTime": "2026-09-19T03:00:00",
+   "expirationDateTimeUTC": "2026-09-19T07:00:00",
+   "doorDateTime": "2026-09-18T19:00:00",
+   "doorDateTimeUTC": "2026-09-18T23:00:00",
+   "announceDateTime": "2026-05-08T12:00:00",
+   "announceDateTimeTimeZone": "America/New_York",
+   "announceDateTimeUTC": "2026-05-08T16:00:00",
+   "presaleDateTime": null,
+   "presaleDateTimeTimeZone": "America/New_York",
+   "presaleDateTimeUTC": null,
+   "presaleEndDateTime": null,
+   "presaleEndDateTimeTimeZone": "America/New_York",
+   "presaleEndDateTimeUTC": null,
+   "onsaleDateTime": "2026-05-15T10:00:00",
+   "onsaleDateTimeTimeZone": "America/New_York",
+   "onsaleDateTimeZoneAbbr": "EDT",
+   "onsaleDateTimeUTC": "2026-05-15T14:00:00",
+   "ticketing": {
+    "statusId": 1,
+    "status": "Buy Tickets",
+    "url": "https://www.axs.com/events/1437480/mon-rovia-tickets",
+    "eventUrl": "https://www.axs.com/events/1437480/mon-rovia-tickets",
+    "ticketLinkExists": true
+   },
+   "ticketPrice": null,
+   "ticketPriceLow": "$0",
+   "ticketPriceHigh": "$0",
+   "doorPrice": null,
+   "doorPriceLow": "$0",
+   "doorPriceHigh": "$0",
+   "bio": "<p>Mon Rov&icirc;a, the Liberian-born and Tennessee-based artist, is redefining modern folk through a<br />powerful blend of soul, storytelling, and purpose. Named one of Spotify&rsquo;s Juniper Artists to<br />Watch, Mon has sold out every headline show to date and performed on some of the world&rsquo;s<br />most celebrated stages, including Bonnaroo, Austin City Limits, Newport Folk Festival,<br />Boston Calling, and Red Rocks. His debut album, Bloodline, marks a major milestone in a<br />breakout career defined by authenticity, empathy, and undeniable momentum.<br />Over the past year, Mon made his television debut on CBS Saturday Morning and The Kelly<br />Clarkson Show, and completed his fully sold-out A Place To Gather North American headline<br />tour, further cementing his reputation as a compelling live performer and community-builder. He<br />was also featured by NPR for his breakout single &ldquo;Heavy Foot&rdquo; and made history as the first-<br />ever musical guest on The Mel Robbins Podcast, where he joined the acclaimed speaker for<br />an in-depth conversation on art, activism, and resilience.<br />Beyond the stage, Mon has emerged as a meaningful cultural voice. He headlined the ACLU&rsquo;s<br />Creatives For Freedom benefit alongside Sheryl Crow, Maggie Rogers, Mark Ronson, and<br />Joy Oladokun, and performed at the Children in Conflict annual benefit with Common and<br />Natasha Bedingfield, hosted by John Oliver&mdash;appearances that reflect the growing reach of<br />his humanitarian perspective.<br />With more than 300 million lifetime streams, 2.5 million followers, and over 1 billion TikTok<br />views, Mon Rov&icirc;a enters this new chapter with extraordinary momentum. Bloodline is out now.</p>",
+   "description": "Mon Rov\u00eea has partnered with PLUS1 so that $1 from every ticket sold goes to support the National Immigration Law Center and their work advancing and defending the rights and opportunities of low-income immigrants and their loved ones.\n\n$.25 from each ticket purchased will go to The Shout Syndicate, a Boston-based, volunteer-run fundraising effort who raises money to help fund youth-led arts programs at proven non-profit creative youth development organizations in Greater Boston. Housed at The Boston Foundation, The Shout Syndicate works in partnership with the Mayor's Office of Arts & Culture's creative plan, Boston Creates.\nhttps://www.theshoutsyndicate.com/  \n",
+   "venue": {
+    "venueId": "128223",
+    "active": true,
+    "locale": "en-US",
+    "localeAvailable": {
+     "1": "en-US"
+    },
+    "title": "Roadrunner",
+    "address_line": "89 Guest Street, Boston, MA 02135",
+    "address": "89 Guest Street",
+    "city": "Boston",
+    "state": "MA",
+    "postalCode": "02135",
+    "country": "United States",
+    "countryCode": "US",
+    "timezone": "America/New_York",
+    "ada": null,
+    "keywords": [],
+    "skinCode": "roadrunner",
+    "currency": "USD",
+    "media": {
+     "10": {
+      "media_id": "4747834",
+      "width": 318,
+      "height": 187,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_10_64b93665ef9a3.jpg"
+     },
+     "21": {
+      "media_id": "4747835",
+      "width": 678,
+      "height": 399,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_21_64b9366627441.jpg"
+     },
+     "11": {
+      "media_id": "4747836",
+      "width": 238,
+      "height": 140,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_11_64b936665fdff.jpg"
+     },
+     "12": {
+      "media_id": "4747837",
+      "width": 134,
+      "height": 79,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_12_64b9366677082.jpg"
+     }
+    },
+    "links": [
+     {
+      "link_id": 1120837,
+      "link_title": "Facebook Page Co-Host",
+      "link_type_id": "24",
+      "link_href": "https://www.facebook.com/BoweryBoston/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120838,
+      "link_title": "Parking",
+      "link_type_id": "17",
+      "link_href": "https://bostonlandingdevelopment.com/map-directions/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120839,
+      "link_title": "Restaurants",
+      "link_type_id": "22",
+      "link_href": "https://bostonlandingdevelopment.com/shop-eat/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120840,
+      "link_title": "FAQ",
+      "link_type_id": "52",
+      "link_href": "https://roadrunnerboston.com/venue-info/",
+      "link_target": "_blank"
+     }
+    ]
+   },
+   "associations": {
+    "performerIds": [
+     "1114595"
+    ],
+    "headliners": [
+     {
+      "performerId": "1114595",
+      "active": true,
+      "locale": "en-US",
+      "keywords": [],
+      "bio": "<p>Mon Rov&icirc;a, the Liberian-born and Tennessee-based artist, is redefining modern folk through a<br />powerful blend of soul, storytelling, and purpose. Named one of Spotify&rsquo;s Juniper Artists to<br />Watch, Mon has sold out every headline show to date and performed on some of the world&rsquo;s<br />most celebrated stages, including Bonnaroo, Austin City Limits, Newport Folk Festival,<br />Boston Calling, and Red Rocks. His debut album, Bloodline, marks a major milestone in a<br />breakout career defined by authenticity, empathy, and undeniable momentum.<br />Over the past year, Mon made his television debut on CBS Saturday Morning and The Kelly<br />Clarkson Show, and completed his fully sold-out A Place To Gather North American headline<br />tour, further cementing his reputation as a compelling live performer and community-builder. He<br />was also featured by NPR for his breakout single &ldquo;Heavy Foot&rdquo; and made history as the first-<br />ever musical guest on The Mel Robbins Podcast, where he joined the acclaimed speaker for<br />an in-depth conversation on art, activism, and resilience.<br />Beyond the stage, Mon has emerged as a meaningful cultural voice. He headlined the ACLU&rsquo;s<br />Creatives For Freedom benefit alongside Sheryl Crow, Maggie Rogers, Mark Ronson, and<br />Joy Oladokun, and performed at the Children in Conflict annual benefit with Common and<br />Natasha Bedingfield, hosted by John Oliver&mdash;appearances that reflect the growing reach of<br />his humanitarian perspective.<br />With more than 300 million lifetime streams, 2.5 million followers, and over 1 billion TikTok<br />views, Mon Rov&icirc;a enters this new chapter with extraordinary momentum. Bloodline is out now.</p>",
+      "media": {
+       "19": {
+        "media_id": "5379920",
+        "width": 678,
+        "height": 399,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_19_69f8c1f728d98.jpg"
+       },
+       "5": {
+        "media_id": "5379921",
+        "width": 318,
+        "height": 187,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_5_69f8c1f772c2a.jpg"
+       },
+       "6": {
+        "media_id": "5379922",
+        "width": 238,
+        "height": 140,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_6_69f8c1f7ade67.jpg"
+       },
+       "9": {
+        "media_id": "5379923",
+        "width": 134,
+        "height": 79,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_9_69f8c1f7e8e92.jpg"
+       },
+       "20": {
+        "media_id": "5379924",
+        "width": 564,
+        "height": 564,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_20_69f8c1f83081f.jpg"
+       },
+       "7": {
+        "media_id": "5379925",
+        "width": 220,
+        "height": 220,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_7_69f8c1f869cc4.jpg"
+       },
+       "24": {
+        "media_id": "5379926",
+        "width": 322,
+        "height": 322,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_24_69f8c1f8a43a5.jpg"
+       },
+       "88": {
+        "media_id": "5379936",
+        "width": 1200,
+        "height": 628,
+        "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_88_69f8c2c416c34.png"
+       }
+      },
+      "links": [
+       {
+        "link_id": "1108686",
+        "link_title": "Official Website",
+        "link_type_id": "8",
+        "link_href": "https://monroviaboy.com/",
+        "link_target": "_blank"
+       },
+       {
+        "link_id": "1108687",
+        "link_title": "Instagram",
+        "link_type_id": "49",
+        "link_href": "https://www.instagram.com/monroviaboy/",
+        "link_target": "_blank"
+       },
+       {
+        "link_id": "1111551",
+        "link_title": "Facebook Page",
+        "link_type_id": "12",
+        "link_href": "https://www.facebook.com/MonRoviaBoyMusic",
+        "link_target": "_blank"
+       }
+      ]
+     }
+    ],
+    "supportingActs": [],
+    "additionalPerformers": []
+   },
+   "media": [],
+   "relatedMedia": {
+    "1": {
+     "media_id": "5379921",
+     "width": 318,
+     "height": 187,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_5_69f8c1f772c2a.jpg"
+    },
+    "2": {
+     "media_id": "5379922",
+     "width": 238,
+     "height": 140,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_6_69f8c1f7ade67.jpg"
+    },
+    "3": {
+     "media_id": "5379925",
+     "width": 220,
+     "height": 220,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_7_69f8c1f869cc4.jpg"
+    },
+    "4": {
+     "media_id": "5379923",
+     "width": 134,
+     "height": 79,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_9_69f8c1f7e8e92.jpg"
+    },
+    "23": {
+     "media_id": "5379926",
+     "width": 322,
+     "height": 322,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_24_69f8c1f8a43a5.jpg"
+    },
+    "17": {
+     "media_id": "5379920",
+     "width": 678,
+     "height": 399,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_19_69f8c1f728d98.jpg"
+    },
+    "18": {
+     "media_id": "5379924",
+     "width": 564,
+     "height": 564,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_20_69f8c1f83081f.jpg"
+    },
+    "86": {
+     "media_id": "5379936",
+     "width": 1200,
+     "height": 628,
+     "file_name": "https://images.discovery-prod.axs.com/2026/05/mon-rovia_05-04-26_88_69f8c2c416c34.png"
+    },
+    "81": {
+     "media_id": 0,
+     "width": "1770",
+     "height": "580",
+     "file_name": "https://s.axs.com/axs/bundles/aegaxs/images/defaults/1/1_1770_580.png"
+    },
+    "102": {
+     "media_id": 0,
+     "width": "860",
+     "height": "400",
+     "file_name": "https://s.axs.com/axs/bundles/aegaxs/images/defaults/1/1_860_400.png"
+    }
+   },
+   "links": [
+    {
+     "link_id": "1111551",
+     "link_title": "Facebook Page",
+     "link_type_id": "12",
+     "link_href": "https://www.facebook.com/MonRoviaBoyMusic",
+     "link_target": "_blank"
+    }
+   ],
+   "olympics": null,
+   "keywords": []
+  },
+  {
+   "eventId": "1431903",
+   "active": true,
+   "createdUTC": "2026-04-30T16:06:40",
+   "modifiedUTC": "2026-09-10T16:54:00",
+   "locale": "en-US",
+   "localeAvailable": {
+    "1": "en-US"
+   },
+   "title": {
+    "presentedBy": null,
+    "presentedByText": null,
+    "headliners": "<a href=\"/artists/1114592/bunt-tickets\">BUNT.</a>",
+    "headlinersText": "BUNT.",
+    "supporting": "Camilla Fabb",
+    "supportingText": "Camilla Fabb",
+    "tour": "In The Boston Round",
+    "eventTitle": "<a href=\"/artists/1114592/bunt-tickets\">BUNT.</a>",
+    "eventTitleText": "BUNT."
+   },
+   "age": "18 & Over",
+   "publishStatus": 1,
+   "private": false,
+   "currency": "USD",
+   "currencySymbol": "$",
+   "eventDateTime": "2026-09-19T20:00:00",
+   "eventDateTimeZone": "America/New_York",
+   "eventDateTimeZoneAbbr": "EDT",
+   "eventDateTimeUTC": "2026-09-20T00:00:00",
+   "eventDateTimeISO": "2026-09-19T20:00:00-04:00",
+   "additionalDates": [],
+   "expirationDateTime": "2026-09-20T03:00:00",
+   "expirationDateTimeUTC": "2026-09-20T07:00:00",
+   "doorDateTime": "2026-09-19T19:00:00",
+   "doorDateTimeUTC": "2026-09-19T23:00:00",
+   "announceDateTime": "2026-05-04T13:00:00",
+   "announceDateTimeTimeZone": "America/New_York",
+   "announceDateTimeUTC": "2026-05-04T17:00:00",
+   "presaleDateTime": null,
+   "presaleDateTimeTimeZone": "America/New_York",
+   "presaleDateTimeUTC": null,
+   "presaleEndDateTime": null,
+   "presaleEndDateTimeTimeZone": "America/New_York",
+   "presaleEndDateTimeUTC": null,
+   "onsaleDateTime": "2026-05-08T10:00:00",
+   "onsaleDateTimeTimeZone": "America/New_York",
+   "onsaleDateTimeZoneAbbr": "EDT",
+   "onsaleDateTimeUTC": "2026-05-08T14:00:00",
+   "ticketing": {
+    "statusId": 1,
+    "status": "Buy Tickets",
+    "url": "https://www.axs.com/events/1431903/bunt-tickets",
+    "eventUrl": "https://www.axs.com/events/1431903/bunt-tickets",
+    "ticketLinkExists": true
+   },
+   "ticketPrice": null,
+   "ticketPriceLow": "$0",
+   "ticketPriceHigh": "$0",
+   "doorPrice": null,
+   "doorPriceLow": "$0",
+   "doorPriceHigh": "$0",
+   "bio": "<p>BUNT.\u2019s story isn\u2019t one of overnight success\u2014it\u2019s a testament to resilience, dedication, and an unshakable belief in his craft. For over a decade, he worked in the background, shaping his sound without major recognition. Eight years into his journey, everything changed. In January 2023, his track Clouds became a global phenomenon, proving that persistence pays off\u2014even when the odds are stacked against you.</p>\n<p>His path to success was anything but conventional. After finishing high school, BUNT. trained at a car company and explored advertising work, but music was always his true calling. A video shoot opportunity in the U.S. became a turning point\u2014he left his job, moved stateside, and went all in. He contributed productions for legendary artists like Avicii and toured alongside Gryffin, but just as things were gaining momentum, the pandemic forced him back to Germany. With touring income gone and an uncertain future ahead, BUNT. worked three jobs to support himself\u2014yet, even in the toughest moments, he never stopped making music. Unknowingly, he was crafting the foundation for what would soon be known as Stutter House.</p>\n<p>&nbsp;Then came Clouds. What started as a snippet on TikTok in December 2022 exploded into a movement. By its official release in January 2023, the track had already amassed 50 million impressions, debuting at #15 on the Billboard Hot Electronic Songs Chart. Since then, it has garnered over 275 million streams, cementing BUNT. as one of dance music\u2019s most exciting new forces.</p>\n<p>BUNT. isn\u2019t just redefining electronic music in the studio\u2014he\u2019s changing the way it\u2019s performed. Breaking the traditional DJ mold, he plays IN THE ROUND, removing barriers and immersing himself fully with his audience. His shows aren\u2019t just events; they\u2019re communal experiences\u2014raw, intimate, and electric. From pop-up gigs in a car wash and a luchador arena in Mexico City to a London mash-and-pie shop and a NYC barbershop, he\u2019s proving that dance music doesn\u2019t need a club to thrive\u2014it belongs everywhere.</p>\n<p>Since Clouds\u2019 release, BUNT. has played over 200 shows across the U.S., Canada, Australia, and Europe, selling over 50,000 tickets along the way. In 2025, he announced his first stadium show at Vel\u00f3dromo Ol\u00edmpico in Mexico City, which sold out within days\u2014forcing an expansion in capacity due to overwhelming demand. His innovative approach to both sound and performance has earned him collaborations with Ellie Goulding, Sam Tompkins, Elley Duh\u00e9, and Ti\u00ebsto, while Spotify named him one of their 10 Dance Artists to Watch alongside Mochakk, Uncle Waffles, and Sammy Virji.</p>",
+   "description": "$.25 from each ticket purchased will go to The Shout Syndicate, a Boston-based, volunteer-run fundraising effort who raises money to help fund youth-led arts programs at proven non-profit creative youth development organizations in Greater Boston. Housed at The Boston Foundation, The Shout Syndicate works in partnership with the Mayor's Office of Arts &amp; Culture's creative plan, Boston Creates. https://www.theshoutsyndicate.com/",
+   "venue": {
+    "venueId": "128223",
+    "active": true,
+    "locale": "en-US",
+    "localeAvailable": {
+     "1": "en-US"
+    },
+    "title": "Roadrunner",
+    "address_line": "89 Guest Street, Boston, MA 02135",
+    "address": "89 Guest Street",
+    "city": "Boston",
+    "state": "MA",
+    "postalCode": "02135",
+    "country": "United States",
+    "countryCode": "US",
+    "timezone": "America/New_York",
+    "ada": null,
+    "keywords": [],
+    "skinCode": "roadrunner",
+    "currency": "USD",
+    "media": {
+     "10": {
+      "media_id": "4747834",
+      "width": 318,
+      "height": 187,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_10_64b93665ef9a3.jpg"
+     },
+     "21": {
+      "media_id": "4747835",
+      "width": 678,
+      "height": 399,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_21_64b9366627441.jpg"
+     },
+     "11": {
+      "media_id": "4747836",
+      "width": 238,
+      "height": 140,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_11_64b936665fdff.jpg"
+     },
+     "12": {
+      "media_id": "4747837",
+      "width": 134,
+      "height": 79,
+      "file_name": "https://images.discovery-prod.axs.com/2023/07/roadrunner_boston_07-20-23_12_64b9366677082.jpg"
+     }
+    },
+    "links": [
+     {
+      "link_id": 1120837,
+      "link_title": "Facebook Page Co-Host",
+      "link_type_id": "24",
+      "link_href": "https://www.facebook.com/BoweryBoston/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120838,
+      "link_title": "Parking",
+      "link_type_id": "17",
+      "link_href": "https://bostonlandingdevelopment.com/map-directions/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120839,
+      "link_title": "Restaurants",
+      "link_type_id": "22",
+      "link_href": "https://bostonlandingdevelopment.com/shop-eat/",
+      "link_target": "_blank"
+     },
+     {
+      "link_id": 1120840,
+      "link_title": "FAQ",
+      "link_type_id": "52",
+      "link_href": "https://roadrunnerboston.com/venue-info/",
+      "link_target": "_blank"
+     }
+    ]
+   },
+   "associations": {
+    "performerIds": [
+     "1114592"
+    ],
+    "headliners": [
+     {
+      "performerId": "1114592",
+      "active": true,
+      "locale": "en-US",
+      "keywords": [],
+      "bio": "<p>BUNT.&rsquo;s story isn&rsquo;t one of overnight success&mdash;it&rsquo;s a testament to resilience, dedication, and an unshakable belief in his craft. For over a decade, he worked in the background, shaping his sound without major recognition. Eight years into his journey, everything changed. In January 2023, his track Clouds became a global phenomenon, proving that persistence pays off&mdash;even when the odds are stacked against you.</p>\r\n<p>His path to success was anything but conventional. After finishing high school, BUNT. trained at a car company and explored advertising work, but music was always his true calling. A video shoot opportunity in the U.S. became a turning point&mdash;he left his job, moved stateside, and went all in. He contributed productions for legendary artists like Avicii and toured alongside Gryffin, but just as things were gaining momentum, the pandemic forced him back to Germany. With touring income gone and an uncertain future ahead, BUNT. worked three jobs to support himself&mdash;yet, even in the toughest moments, he never stopped making music. Unknowingly, he was crafting the foundation for what would soon be known as Stutter House.</p>\r\n<p>&nbsp;Then came Clouds. What started as a snippet on TikTok in December 2022 exploded into a movement. By its official release in January 2023, the track had already amassed 50 million impressions, debuting at #15 on the Billboard Hot Electronic Songs Chart. Since then, it has garnered over 275 million streams, cementing BUNT. as one of dance music&rsquo;s most exciting new forces.</p>\r\n<p>BUNT. isn&rsquo;t just redefining electronic music in the studio&mdash;he&rsquo;s changing the way it&rsquo;s performed. Breaking the traditional DJ mold, he plays IN THE ROUND, removing barriers and immersing himself fully with his audience. His shows aren&rsquo;t just events; they&rsquo;re communal experiences&mdash;raw, intimate, and electric. From pop-up gigs in a car wash and a luchador arena in Mexico City to a London mash-and-pie shop and a NYC barbershop, he&rsquo;s proving that dance music doesn&rsquo;t need a club to thrive&mdash;it belongs everywhere.</p>\r\n<p>Since Clouds&rsquo; release, BUNT. has played over 200 shows across the U.S., Canada, Australia, and Europe, selling over 50,000 tickets along the way. In 2025, he announced his first stadium show at Vel&oacute;dromo Ol&iacute;mpico in Mexico City, which sold out within days&mdash;forcing an expansion in capacity due to overwhelming demand. His innovative approach to both sound and performance has earned him collaborations with Ellie Goulding, Sam Tompkins, Elley Duh&eacute;, and Ti&euml;sto, while Spotify named him one of their 10 Dance Artists to Watch alongside Mochakk, Uncle Waffles, and Sammy Virji.</p>",
+      "media": {
+       "19": {
+        "media_id": "5378158",
+        "width": 678,
+        "height": 399,
+        "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt_04-30-26_19_69f3850e3d6fe.jpg"
+       },
+       "5": {
+        "media_id": "5378159",
+        "width": 318,
+        "height": 187,
+        "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt_04-30-26_5_69f3850e8ae13.jpg"
+       },
+       "6": {
+        "media_id": "5378160",
+        "width": 238,
+        "height": 140,
+        "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt_04-30-26_6_69f3850ec37c5.jpg"
+       },
+       "9": {
+        "media_id": "5378161",
+        "width": 134,
+        "height": 79,
+        "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt_04-30-26_9_69f3850f09678.jpg"
+       },
+       "20": {
+        "media_id": "5378162",
+        "width": 564,
+        "height": 564,
+        "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt_04-30-26_20_69f3850f41b0e.jpg"
+       },
+       "7": {
+        "media_id": "5378163",
+        "width": 220,
+        "height": 220,
+        "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt_04-30-26_7_69f3850f7caf5.jpg"
+       },
+       "24": {
+        "media_id": "5378164",
+        "width": 322,
+        "height": 322,
+        "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt_04-30-26_24_69f3850fb5cb3.jpg"
+       },
+       "88": {
+        "media_id": "5378165",
+        "width": 1200,
+        "height": 628,
+        "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt_04-30-26_88_69f3850ff0860.jpg"
+       }
+      },
+      "links": [
+       {
+        "link_id": "1108679",
+        "link_title": "Facebook",
+        "link_type_id": "12",
+        "link_href": "https://www.facebook.com/buntmusic/",
+        "link_target": "_blank"
+       },
+       {
+        "link_id": "1108680",
+        "link_title": "Instagram",
+        "link_type_id": "49",
+        "link_href": "https://www.instagram.com/buntmusic/",
+        "link_target": "_blank"
+       },
+       {
+        "link_id": "1120444",
+        "link_title": "TikTok",
+        "link_type_id": "55",
+        "link_href": "https://www.tiktok.com/@bunt",
+        "link_target": "_blank"
+       },
+       {
+        "link_id": "1120445",
+        "link_title": "Youtube",
+        "link_type_id": "14",
+        "link_href": "https://www.youtube.com/%40BUNTMusic",
+        "link_target": "_blank"
+       },
+       {
+        "link_id": "1120447",
+        "link_title": "Apple Music",
+        "link_type_id": "8",
+        "link_href": "https://music.apple.com/us/artist/bunt/1436090348",
+        "link_target": "_blank"
+       }
+      ]
+     }
+    ],
+    "supportingActs": [],
+    "additionalPerformers": []
+   },
+   "media": {
+    "17": {
+     "media_id": "5378150",
+     "width": 678,
+     "height": 399,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_17_69f38323830f5.jpg"
+    },
+    "1": {
+     "media_id": "5378151",
+     "width": 318,
+     "height": 187,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_1_69f38323d4442.jpg"
+    },
+    "2": {
+     "media_id": "5378152",
+     "width": 238,
+     "height": 140,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_2_69f383241c2fd.jpg"
+    },
+    "4": {
+     "media_id": "5378153",
+     "width": 134,
+     "height": 79,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_4_69f383245919d.jpg"
+    },
+    "18": {
+     "media_id": "5378154",
+     "width": 564,
+     "height": 564,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_18_69f383249d540.jpg"
+    },
+    "3": {
+     "media_id": "5378155",
+     "width": 220,
+     "height": 220,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_3_69f38324da4cb.jpg"
+    },
+    "23": {
+     "media_id": "5378156",
+     "width": 322,
+     "height": 322,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_23_69f38325288a9.jpg"
+    },
+    "86": {
+     "media_id": "5378157",
+     "width": 1200,
+     "height": 628,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_86_69f383256905f.jpg"
+    }
+   },
+   "relatedMedia": {
+    "1": {
+     "media_id": "5378151",
+     "width": 318,
+     "height": 187,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_1_69f38323d4442.jpg"
+    },
+    "2": {
+     "media_id": "5378152",
+     "width": 238,
+     "height": 140,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_2_69f383241c2fd.jpg"
+    },
+    "3": {
+     "media_id": "5378155",
+     "width": 220,
+     "height": 220,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_3_69f38324da4cb.jpg"
+    },
+    "4": {
+     "media_id": "5378153",
+     "width": 134,
+     "height": 79,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_4_69f383245919d.jpg"
+    },
+    "23": {
+     "media_id": "5378156",
+     "width": 322,
+     "height": 322,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_23_69f38325288a9.jpg"
+    },
+    "17": {
+     "media_id": "5378150",
+     "width": 678,
+     "height": 399,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_17_69f38323830f5.jpg"
+    },
+    "18": {
+     "media_id": "5378154",
+     "width": 564,
+     "height": 564,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_18_69f383249d540.jpg"
+    },
+    "86": {
+     "media_id": "5378157",
+     "width": 1200,
+     "height": 628,
+     "file_name": "https://images.discovery-prod.axs.com/2026/04/bunt-tickets_09-19-26_86_69f383256905f.jpg"
+    },
+    "81": {
+     "media_id": 0,
+     "width": "1770",
+     "height": "580",
+     "file_name": "https://s.axs.com/axs/bundles/aegaxs/images/defaults/1/1_1770_580.png"
+    },
+    "102": {
+     "media_id": 0,
+     "width": "860",
+     "height": "400",
+     "file_name": "https://s.axs.com/axs/bundles/aegaxs/images/defaults/1/1_860_400.png"
+    }
+   },
+   "links": [
+    {
+     "link_id": "1108679",
+     "link_title": "Facebook",
+     "link_type_id": "12",
+     "link_href": "https://www.facebook.com/buntmusic/",
+     "link_target": "_blank"
+    }
+   ],
+   "olympics": null,
+   "keywords": []
+  }
+ ]
+}

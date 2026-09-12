@@ -1,0 +1,85 @@
+{
+ "X019B": {
+  "schedule": {
+   "20502": {
+    "2026-09-16": [
+     {
+      "id": "20502-2026-09-16 19:00:00-Auditorium.Comfort.ReservedSeating,Format.Projection.Digital,Screen.Accessibility.HearingImpaired",
+      "startsAt": "2026-09-16T19:00:00",
+      "tags": [
+       "Auditorium.Comfort.ReservedSeating",
+       "Format.Projection.Digital",
+       "Screen.Accessibility.HearingImpaired"
+      ],
+      "isExpired": false,
+      "data": {
+       "ticketing": [
+        {
+         "urls": [
+          "https://booking.landmarktheatres.com/launch/ticketing/10b0aab0-c280-5038-9eb0-7f7bc8dee57d"
+         ],
+         "type": "DESKTOP",
+         "provider": "default"
+        },
+        {
+         "urls": [
+          "https://relay.mvtx.us/ticketing/dbz?code_theater=X019B&gid_entity=movie.movie._.20502&tags=Auditorium.Comfort.ReservedSeating,Format.Projection.Digital,Screen.Accessibility.HearingImpaired&perfd=20260916&perft=19:00&code=2D; ORG; 5.1; Flat; HI; Mystery; Thriller; Drama; One-Off; 150-500; 50-75; Non-IP; Exclude; Reserved Seating"
+         ],
+         "type": "DESKTOP",
+         "provider": "relay"
+        }
+       ]
+      },
+      "occupancy": {
+       "rate": 31
+      },
+      "screen": {
+       "name": "5"
+      },
+      "nextShowtimes": []
+     }
+    ]
+   },
+   "22170": {
+    "2026-09-15": [
+     {
+      "id": "22170-2026-09-15 19:00:00-Auditorium.Comfort.ReservedSeating,Format.Projection.2k,Format.Projection.Scope,Screen.Accessibility.HearingImpaired",
+      "startsAt": "2026-09-15T19:00:00",
+      "tags": [
+       "Auditorium.Comfort.ReservedSeating",
+       "Format.Projection.2k",
+       "Format.Projection.Scope",
+       "Screen.Accessibility.HearingImpaired"
+      ],
+      "isExpired": false,
+      "data": {
+       "ticketing": [
+        {
+         "urls": [
+          "https://booking.landmarktheatres.com/launch/ticketing/687b4134-c7c6-5dda-8c58-52c7b52f2bda"
+         ],
+         "type": "DESKTOP",
+         "provider": "default"
+        },
+        {
+         "urls": [
+          "https://relay.mvtx.us/ticketing/dbz?code_theater=X019B&gid_entity=movie.movie._.22170&tags=Auditorium.Comfort.ReservedSeating,Format.Projection.2k,Format.Projection.Scope,Screen.Accessibility.HearingImpaired&perfd=20260915&perft=19:00&code=2D; ORG; 5.1; Scope; 2K; HI; Retro Replay; One-Off; 10-40; Book; 15-30; 40-49; 50-59; Comedy; Romance; Reserved Seating"
+         ],
+         "type": "DESKTOP",
+         "provider": "relay"
+        }
+       ]
+      },
+      "occupancy": {
+       "rate": 6
+      },
+      "screen": {
+       "name": "Screen 5"
+      },
+      "nextShowtimes": []
+     }
+    ]
+   }
+  }
+ }
+}

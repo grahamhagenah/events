@@ -1,0 +1,640 @@
+{
+ "data": {
+  "presentations": [
+   {
+    "slug": "practical-magic-2",
+    "legacySlug": null,
+    "show": {
+     "slug": "practical-magic-2",
+     "legacySlug": null,
+     "title": "Practical Magic 2",
+     "vistaHoCodes": [
+      "A000036620",
+      "A000036753",
+      "A000036770"
+     ],
+     "headline": "There's still a little witch in all of us",
+     "landscapeHeroImage": {
+      "uri": "https://img-assets.drafthouse.com/images/shows/practical-magic-2/PRACTICAL-MAGIC-2_hero2.jpg?auto=compress&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1080&q=80&w=1920",
+      "altText": "PRACTICAL MAGIC 2"
+     },
+     "portraitHeroImage": {
+      "uri": "https://img-assets.drafthouse.com/images/shows/practical-magic-2/PRACTICAL-MAGIC-2_portrait.jpg?auto=compress&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1440&q=80&w=1080",
+      "altText": "PRACTICAL MAGIC 2"
+     },
+     "posterImages": [
+      {
+       "uri": "https://img-assets.drafthouse.com/images/shows/practical-magic-2/PRACTICAL-MAGIC-2_sp-poster-copy.jpg?auto=compress&fit=clip&h=1620&q=80&w=1080",
+       "altText": "PRACTICAL MAGIC 2"
+      }
+     ],
+     "certification": "PG-13"
+    },
+    "event": null,
+    "eventType": null,
+    "formatSlugs": [
+     "2d-digital"
+    ],
+    "presentationAttributeSlugs": [
+     "first-run"
+    ],
+    "associatedPresentationSlugs": [
+     "dress-up-screening-practical-magic-2-midnight-margarita-dress-up-screening"
+    ],
+    "openingDateClt": null,
+    "openingDateDisplay": null,
+    "superTitle": null,
+    "isHidden": false,
+    "primaryCollectionSlug": null,
+    "isAvailableForPersonalTheater": false
+   },
+   {
+    "slug": "oasis-dont-look-back-in-anger",
+    "legacySlug": null,
+    "show": {
+     "slug": "oasis-dont-look-back-in-anger",
+     "legacySlug": null,
+     "title": "Oasis: Don't Look Back in Anger",
+     "vistaHoCodes": [
+      "A000036845",
+      "A000036848"
+     ],
+     "headline": "One of the most anticipated rock 'n' roll comebacks of all time",
+     "landscapeHeroImage": {
+      "uri": "https://img-assets.drafthouse.com/images/shows/oasis-dont-look-back-in-anger/OASIS-DONT-LOOK-BACK-IN-ANGER_hero.jpg?auto=compress&crop=focalpoint&fit=crop&fp-x=0.6294&fp-y=0.2083&h=1080&q=80&w=1920",
+      "altText": "OASIS: DON'T LOOK BACK IN ANGER"
+     },
+     "portraitHeroImage": {
+      "uri": "https://img-assets.drafthouse.com/images/shows/oasis-dont-look-back-in-anger/OASIS-DONT-LOOK-BACK-IN-ANGER_hero.jpg?auto=compress&crop=focalpoint&fit=crop&fp-x=0.6294&fp-y=0.2083&h=1440&q=80&w=1080",
+      "altText": "OASIS: DON'T LOOK BACK IN ANGER"
+     },
+     "posterImages": [
+      {
+       "uri": "https://img-assets.drafthouse.com/images/shows/oasis-dont-look-back-in-anger/OASIS-DONT-LOOK-BACK-IN-ANGER_sp-poster-updated.jpg?auto=compress&fit=clip&h=1620&q=80&w=1080",
+       "altText": "OASIS: DON'T LOOK BACK IN ANGER"
+      }
+     ],
+     "certification": "R"
+    },
+    "event": null,
+    "eventType": null,
+    "formatSlugs": [
+     "2d-digital"
+    ],
+    "presentationAttributeSlugs": [
+     "first-run"
+    ],
+    "associatedPresentationSlugs": [],
+    "openingDateClt": null,
+    "openingDateDisplay": null,
+    "superTitle": null,
+    "isHidden": false,
+    "primaryCollectionSlug": null,
+    "isAvailableForPersonalTheater": false
+   },
+   {
+    "slug": "hope-2026",
+    "legacySlug": null,
+    "show": {
+     "slug": "hope-2026",
+     "legacySlug": null,
+     "title": "Hope (2026)",
+     "vistaHoCodes": [
+      "A000036591",
+      "A000036823",
+      "A000036809",
+      "A000036810"
+     ],
+     "headline": "A haunting South Korean thriller about fear, conflict, and cosmic disaster",
+     "landscapeHeroImage": {
+      "uri": "https://img-assets.drafthouse.com/images/shows/hope-2026/hope_2026_hero_showpage.jpg?auto=compress&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1080&q=80&w=1920",
+      "altText": "HOPE 2026 film still woman in a police car"
+     },
+     "portraitHeroImage": {
+      "uri": "https://img-assets.drafthouse.com/images/shows/hope-2026/hope_2026_portrait_showpage.jpg?auto=compress&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&h=1440&q=80&w=1080",
+      "altText": "HOPE 2026 film still woman in a police car"
+     },
+     "posterImages": [
+      {
+       "uri": "https://img-assets.drafthouse.com/images/shows/hope-2026/hope_2026_poster.jpg?auto=compress&fit=clip&h=1620&q=80&w=1080",
+       "altText": "HOPE 2026 film poster woman aiming a gun"
+      }
+     ],
+     "certification": "R"
+    },
+    "event": null,
+    "eventType": null,
+    "formatSlugs": [
+     "2d-digital"
+    ],
+    "presentationAttributeSlugs": [
+     "first-run"
+    ],
+    "associatedPresentationSlugs": [],
+    "openingDateClt": null,
+    "openingDateDisplay": null,
+    "superTitle": null,
+    "isHidden": false,
+    "primaryCollectionSlug": null,
+    "isAvailableForPersonalTheater": false
+   }
+  ],
+  "sessions": [
+   {
+    "cinemaId": "2901",
+    "sessionId": "35126",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "ONSALE",
+    "businessDateClt": "2026-09-12",
+    "showTimeClt": "2026-09-12T18:00:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-12T22:00:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "10",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   },
+   {
+    "cinemaId": "2901",
+    "sessionId": "35125",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "ONSALE",
+    "businessDateClt": "2026-09-12",
+    "showTimeClt": "2026-09-12T21:45:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-13T01:45:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "10",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   },
+   {
+    "cinemaId": "2901",
+    "sessionId": "36102",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "ONSALE",
+    "businessDateClt": "2026-09-13",
+    "showTimeClt": "2026-09-13T12:00:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-13T16:00:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "9",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   },
+   {
+    "cinemaId": "2901",
+    "sessionId": "35128",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "ONSALE",
+    "businessDateClt": "2026-09-13",
+    "showTimeClt": "2026-09-13T14:15:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-13T18:15:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "10",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   },
+   {
+    "cinemaId": "2901",
+    "sessionId": "35127",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "ONSALE",
+    "businessDateClt": "2026-09-13",
+    "showTimeClt": "2026-09-13T18:00:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-13T22:00:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "10",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   },
+   {
+    "cinemaId": "2901",
+    "sessionId": "36142",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "ONSALE",
+    "businessDateClt": "2026-09-14",
+    "showTimeClt": "2026-09-14T12:45:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-14T16:45:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "9",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   },
+   {
+    "cinemaId": "2901",
+    "sessionId": "36131",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "ONSALE",
+    "businessDateClt": "2026-09-14",
+    "showTimeClt": "2026-09-14T14:15:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-14T18:15:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "10",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   },
+   {
+    "cinemaId": "2901",
+    "sessionId": "36117",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "ONSALE",
+    "businessDateClt": "2026-09-14",
+    "showTimeClt": "2026-09-14T18:00:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-14T22:00:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "10",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   },
+   {
+    "cinemaId": "2901",
+    "sessionId": "past-1",
+    "presentationSlug": "hope-2026",
+    "legacySlug": "hope-2026",
+    "status": "PAST",
+    "businessDateClt": "2026-09-12",
+    "showTimeClt": "2026-09-12T18:00:00",
+    "cinemaTimeZoneName": "America/New_York",
+    "showTimeUtc": "2026-09-12T22:00:00",
+    "ticketTypesLoyaltyCount": 9,
+    "ticketTypesVoucherCount": 3,
+    "ticketTypesNormalCount": 2,
+    "reservedSeating": true,
+    "screenNumber": "10",
+    "formatSlug": "2d-digital",
+    "isClosedCaptioningAvailable": true,
+    "isDescriptiveAudioAvailable": false,
+    "isAssistedListeningAvailable": false,
+    "sessionAttributeSlugs": [
+     "Digital"
+    ],
+    "recognitionIds": [
+     "0",
+     "321",
+     "322",
+     "323",
+     "324",
+     "383",
+     "384",
+     "385",
+     "386",
+     "387",
+     "389",
+     "390",
+     "394",
+     "395",
+     "396",
+     "397",
+     "398",
+     "441",
+     "440"
+    ],
+    "agePolicySlug": "rated-r",
+    "isHidden": false,
+    "ticketingExperience": "DEFAULT"
+   }
+  ],
+  "market": [
+   {
+    "id": "2900",
+    "slug": "boston",
+    "name": "Boston",
+    "status": "OPEN",
+    "subscriptionProgramStatus": "OPEN",
+    "isOpenAccessSeasonPassMarket": true,
+    "isOpenForBusiness": true,
+    "isFoodPreorderRequired": false,
+    "foodPreorderAvailability": "NONE",
+    "isMaxSafetyOperation": false,
+    "cinemas": [
+     {
+      "id": "2901",
+      "loyaltyCinemaId": "55",
+      "slug": "seaport",
+      "name": "Seaport",
+      "status": "OPEN",
+      "timeZoneName": "America/New_York",
+      "latitude": 42.3522,
+      "longitude": -71.0486,
+      "street1": "60 Seaport Blvd.",
+      "street2": "#315",
+      "city": "Boston",
+      "state": "MA",
+      "postalCode": "02210",
+      "phone": "617-927-9560",
+      "email": "",
+      "heroImageUrl": "https://crafthouse-assets-prod.s3.amazonaws.com/images/venues/seaport/9L3A0328.jpg",
+      "googleMapsUrl": null,
+      "appleMapsUrl": null,
+      "attachedBar": {
+       "name": "The Press Room - Seaport",
+       "websiteUrl": "https://drafthouse.com/boston/theater-bar/seaport"
+      },
+      "isClosedCaptioningAvailable": true,
+      "isDescriptiveAudioAvailable": true,
+      "isAssistedListeningAvailable": true,
+      "menus": {
+       "theaterMenuPdf": "https://crafthouse-assets-prod.s3.amazonaws.com/files/venues/seaport/ADC_CoreMenu_Tier3_Boston_Digital_8-25-26.pdf"
+      },
+      "foodPreorderAvailability": "NONE",
+      "parkingNotice": "<p>Directions & Parking<br />https://drafthouse.com/boston/theater/seaport#theater-directions</p>",
+      "postPurchaseNotice": {
+       "title": "Directions & Parking",
+       "description": "https://drafthouse.com/boston/theater/seaport#theater-directions"
+      },
+      "isWageNoticeDisplayed": false,
+      "adyenPaymentEnabled": false
+     }
+    ],
+    "marketStrings": [
+     {
+      "key": "closedCaptioning",
+      "value": "The personal closed captioning device displays feature film dialogue and other audio in the form of English-language text for individuals who are deaf or hard of hearing."
+     },
+     {
+      "key": "descriptiveAudio",
+      "value": "The descriptive audio headset provides individuals who are blind or have low vision with an English-language narration of the details of the feature presentation that can't be understood by the soundtrack alone."
+     },
+     {
+      "key": "assistedListening",
+      "value": "Upon request at the box office, we provide assistive listening headsets with amplified audio for those individuals who are hard of hearing. For guests who prefer to use their own hearing aids, neck loops, or cochlear implants, our assistive listening headsets have a 3.5mm headphone jack to connect to those devices."
+     },
+     {
+      "key": "latePolicy",
+      "value": "In order to ensure the highest quality experience for all guests, you may not enter a movie after it has started. We\u2019d love to see you up to 30 minutes early. Running late? No worries, we will happily exchange your ticket for a different showtime or a raincheck to a future show."
+     }
+    ]
+   }
+  ]
+ }
+}

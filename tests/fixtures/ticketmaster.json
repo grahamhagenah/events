@@ -1,0 +1,107 @@
+{
+ "_embedded": {
+  "events": [
+   {
+    "name": "Oteil Burbridge with LaMP - Wish Benefit Tour",
+    "url": "https://www.ticketmaster.com/event/386630908865",
+    "dates": {
+     "start": {
+      "localDate": "2026-10-09",
+      "localTime": "19:00:00"
+     },
+     "status": {
+      "code": "onsale"
+     }
+    },
+    "classifications": [
+     {
+      "primary": true,
+      "segment": {
+       "name": "Music"
+      }
+     }
+    ]
+   },
+   {
+    "name": "Troy Hawke",
+    "url": "https://www.ticketmaster.com/event/833596724566",
+    "dates": {
+     "start": {
+      "localDate": "2026-09-19",
+      "localTime": "19:30:00"
+     },
+     "status": {
+      "code": "onsale"
+     }
+    },
+    "classifications": [
+     {
+      "primary": true,
+      "segment": {
+       "name": "Arts & Theatre"
+      }
+     }
+    ]
+   },
+   {
+    "name": "Late Show, Time To Be Announced",
+    "url": "https://www.ticketmaster.com/event/833028298155",
+    "dates": {
+     "start": {
+      "localDate": "2026-09-26",
+      "timeTBA": true
+     },
+     "status": {
+      "code": "onsale"
+     }
+    },
+    "classifications": [
+     {
+      "primary": true,
+      "segment": {
+       "name": "Music"
+      }
+     }
+    ]
+   },
+   {
+    "name": "Cancelled Show",
+    "url": "https://www.ticketmaster.com/event/298962467108",
+    "dates": {
+     "start": {
+      "localDate": "2026-09-27",
+      "localTime": "20:00:00"
+     },
+     "status": {
+      "code": "cancelled"
+     }
+    },
+    "classifications": [
+     {
+      "primary": true,
+      "segment": {
+       "name": "Music"
+      }
+     }
+    ]
+   },
+   {
+    "name": "Untyped Show",
+    "url": "https://www.ticketmaster.com/event/348127646499",
+    "dates": {
+     "start": {
+      "localDate": "2026-09-28",
+      "localTime": "20:00:00"
+     },
+     "status": {
+      "code": "onsale"
+     }
+    }
+   }
+  ]
+ },
+ "page": {
+  "size": 100,
+  "totalElements": 5
+ }
+}

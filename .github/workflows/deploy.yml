@@ -13,6 +13,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  issues: write  # alerts.py opens and closes "Source failing" issues.
 
 concurrency:
   group: pages
@@ -26,6 +27,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+      # The readers against saved samples of each source; a change that breaks one isn't deployed.
+      - run: python3 -m unittest discover -s tests
       - run: python3 build.py
         env:
           # A free Ticketmaster Discovery API key, for venues like the Paradise. Kept as a repository secret.
@@ -35,6 +38,12 @@ jobs:
           path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
+      # An issue for any source failing for hours (GitHub emails about it); never holds up the page.
+      - if: ${{ !cancelled() }}
+        continue-on-error: true
+        run: python3 alerts.py dist/listings.json
+        env:
+          GH_TOKEN: ${{ github.token }}
 
   # GitHub turns off scheduled workflows after 60 days without a commit, which would freeze the page.
   # If the repo has been quiet for 50 days, an empty commit resets that clock.
