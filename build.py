@@ -386,24 +386,25 @@ def clock(moment):
     return f"{hour}{'' if moment.minute == 0 else f':{moment.minute:02d}'}{'am' if moment.hour < 12 else 'pm'}"
 
 
-def icon(label, drawing):
-    label = html.escape(label)
-    return (
-        f'<svg class="icon" viewBox="0 0 16 16" role="img" aria-label="{label}"><title>{label}</title>'
-        f'<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
-        f"{drawing}</g></svg>"
-    )
-
-
-# Small monochrome marks after each name, like the newsfeed's podcast headphones.
-ICONS = {
-    # Two beamed eighth notes.
-    "music": icon("Music", '<path d="M5.5 12.5V4l8-2v8.5"/><circle cx="3.75" cy="12.5" r="1.75" fill="currentColor"/>'
-                           '<circle cx="11.75" cy="10.5" r="1.75" fill="currentColor"/>'),
-    # A frame of film, with sprocket holes down both sides.
-    "film": icon("Film", '<rect x="2" y="2" width="12" height="12" rx="1.5"/><path d="M5 2v12M11 2v12'
-                         'M2 5.5h3M2 10.5h3M11 5.5h3M11 10.5h3"/>'),
+# Each row's mark for its category, in the category's color: two beamed eighth notes for music, a frame of
+# film with sprocket holes down both sides for film. Drawn once in the page; rows point to the drawing.
+ICON_DRAWINGS = {
+    "music": '<path d="M5.5 12.5V4l8-2v8.5"/><circle cx="3.75" cy="12.5" r="1.75" fill="currentColor"/>'
+             '<circle cx="11.75" cy="10.5" r="1.75" fill="currentColor"/>',
+    "film": '<rect x="2" y="2" width="12" height="12" rx="1.5"/>'
+            '<path d="M5 2v12M11 2v12M2 5.5h3M2 10.5h3M11 5.5h3M11 10.5h3"/>',
 }
+ICON_SYMBOLS = '<svg class="symbols" aria-hidden="true">' + "".join(
+    f'<symbol id="icon-{name}" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.5" '
+    f'stroke-linecap="round" stroke-linejoin="round">{drawing}</g></symbol>'
+    for name, drawing in ICON_DRAWINGS.items()
+) + "</svg>"
+
+
+def icon(category, decorative=False):
+    """A category's mark. Beside a label that already says it (the filter), it's hidden from screen readers."""
+    label = "aria-hidden=\"true\"" if decorative else f'role="img" aria-label="{html.escape(CATEGORIES[category])}"'
+    return f'<svg class="icon" {label}><use href="#icon-{category}"/></svg>'
 
 
 def render_times(moments):
@@ -418,9 +419,10 @@ def render_row(item):
         return render_combined(item)
     detail = f'<span class="detail">{html.escape(item["detail"])}</span>' if item["detail"] else ""
     return (
-        f'<li data-category="{item["category"]}"><span class="source"><span>{html.escape(item["venue"])}</span></span>'
+        f'<li data-category="{item["category"]}"><span class="source">{icon(item["category"])}'
+        f'<span>{html.escape(item["venue"])}</span></span>'
         f'<div class="headline"><a class="title" href="{html.escape(item["link"])}">{html.escape(item["title"])}</a>'
-        f'{ICONS.get(item["category"], "")}{render_times(item["times"])}{detail}</div></li>'
+        f'{render_times(item["times"])}{detail}</div></li>'
     )
 
 
@@ -435,8 +437,8 @@ def render_combined(item):
     )
     return (
         f'<li class="combined" data-category="{item["category"]}"><details><summary>'
-        f'<span class="source"><span>{places} theaters</span></span>'
-        f'<div class="headline"><span class="title">{html.escape(item["title"])}</span>{ICONS["film"]}{start}'
+        f'<span class="source">{icon(item["category"])}<span>{places} theaters</span></span>'
+        f'<div class="headline"><span class="title">{html.escape(item["title"])}</span>{start}'
         f'<span class="more" aria-hidden="true">›</span></div></summary>'
         f'<ul class="showings">{showings}</ul></details></li>'
     )
@@ -459,7 +461,7 @@ def render_index(events, sources, failed, built_at):
         )
 
     buttons = '<button data-show="all">All</button>' + "".join(
-        f'<button data-show="{key}">{label}</button>' for key, label in CATEGORIES.items()
+        f'<button data-show="{key}">{icon(key, decorative=True)}{label}</button>' for key, label in CATEGORIES.items()
     )
     names = ", ".join(html.escape(source["name"]) for source in sources)
     failed_note = f"<p>Couldn’t load {html.escape(', '.join(failed))}.</p>\n" if failed else ""
@@ -576,7 +578,7 @@ def page(title, body, built_at):
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <title>{title}</title>
 <style>
-  /* Category dots, in the list and on the filter: violet music, amber film. */
+  /* Category colors, for the marks in the list and on the filter: violet music, amber film. */
   :root {{ --music: #a78bfa; --film: #fbbf24; }}
   html {{ background: #000; }}
   body {{ margin: 0; padding: 3rem 1.25rem 4rem; color: #fff; background: #000;
@@ -593,9 +595,10 @@ def page(title, body, built_at):
   .filter button {{ padding: 0; border: 0; background: none; color: #666; font: inherit; font-size: .8rem; cursor: pointer; }}
   .filter button:hover {{ color: #999; }}
   .filter button[aria-pressed="true"] {{ color: #fff; }}
-  .filter button:not([data-show="all"])::before, .source::before {{
-    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--dot); }}
-  .filter button::before {{ display: inline-block; margin-right: .45em; vertical-align: .1em; }}
+  /* Each row's music or film mark, and the filter's, in its category's color. */
+  .symbols {{ position: absolute; width: 0; height: 0; overflow: hidden; }}
+  .icon {{ flex: none; width: 12px; height: 12px; color: var(--dot); }}
+  .filter .icon {{ margin-right: .4em; vertical-align: -1px; }}
   [data-show="music"], [data-category="music"] {{ --dot: var(--music); }}
   [data-show="film"], [data-category="film"] {{ --dot: var(--film); }}
   h2 {{ margin: 2.25rem 0 .5rem; color: #777; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }}
@@ -606,20 +609,18 @@ def page(title, body, built_at):
   .pager a, .pager a:visited {{ color: #999; }}
   .relative:not(:empty) {{ color: #fff; margin-right: .6em; }}
   ul {{ margin: 0; padding: 0; list-style: none; }}
-  /* Rows as in the newsfeed: the venue beside its dot, then the name, one line tall, times after it. */
+  /* Rows as in the newsfeed: the venue beside its mark, then the name, one line tall, times after it. */
   .day > ul > li, .combined summary {{ display: grid; grid-template-columns: 10rem 1fr; gap: 1.25rem; align-items: baseline; }}
   .day > ul > li {{ position: relative; padding: .4rem 0; }}
   /* Whatever the filter and pager hide stays hidden, however specific the rules that lay it out. */
   [hidden] {{ display: none !important; }}
-  /* The dot leads the venue name, inside the text's left edge. */
+  /* The mark leads the venue name, inside the text's left edge. */
   .source {{ display: flex; align-items: center; gap: .5em; min-width: 0; color: #666; font-size: .8em; }}
-  .source::before {{ flex: none; }}
   .source > span {{ min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
   .headline {{ display: flex; align-items: baseline; min-width: 0; }}
   .headline .title {{ min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
   .times, .detail {{ margin-left: .6em; color: #666; font-size: .8em; white-space: nowrap; }}
   .times {{ flex: none; }}
-  .icon {{ flex: none; width: .8em; height: .8em; margin-left: .55em; color: #666; vertical-align: -.05em; }}
   .times time + time::before {{ content: ", "; }}
   .detail {{ min-width: 0; overflow: hidden; text-overflow: ellipsis; }}
   /* A film at several places: the row opens to each place's times, with a › that turns when it's open. */
@@ -639,12 +640,11 @@ def page(title, body, built_at):
     .showings {{ margin-left: 0; }}
     .headline {{ display: block; }}
     .headline .title, .times, .detail {{ white-space: normal; }}
-    /* The dot moves beside the name's first line, below the venue, as in the newsfeed. It keeps to a
-       slot at the left edge that the venue and name both start after. */
-    .day > ul > li {{ padding-left: calc(6px + .5em); }}
-    .source::before {{ display: none; }}
-    .day > ul > li::before {{ content: ""; position: absolute; left: 0; top: calc(.4rem + 1.16em + .725em - 1px);
-                 width: 6px; height: 6px; border-radius: 50%; background: var(--dot); }}
+    /* The mark moves beside the name's first line, below the venue, into a slot at the left edge that the
+       venue and name both start after. Its top: the row's padding, then (in the venue's text size) 1.45em
+       for the venue's line and .9em for half the name's line, less half the mark. */
+    .day > ul > li {{ padding-left: calc(12px + .5em); }}
+    .source .icon {{ position: absolute; left: 0; top: calc(.4rem + 2.35em - 6px); }}
   }}
   a {{ color: #fff; text-decoration: none; }}
   a:hover {{ text-decoration: underline; }}
@@ -655,6 +655,7 @@ def page(title, body, built_at):
 </style>
 </head>
 <body>
+{ICON_SYMBOLS}
 <main>
 <header><nav class="sites" aria-label="Sites"><a href="https://news.grahamhagenah.com/">Newsfeed</a><a href="./" aria-current="page">Events</a></nav><span class="header-note">Updated <time class="updated" datetime="{built_at.isoformat()}"></time></span></header>
 {body}
