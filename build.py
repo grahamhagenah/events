@@ -21,6 +21,10 @@ SOURCES_FILE = ROOT / "sources.txt"
 OUT_DIR = ROOT / "dist"
 REPO_URL = "https://github.com/grahamhagenah/events"
 DAYS_AHEAD = 30  # How far ahead the page lists events.
+# Each build publishes its listings beside the page; a source that fails next time falls back to its copy
+# there, if it's no older than this.
+LISTINGS_URL = "https://events.grahamhagenah.com/listings.json"
+FALLBACK_LIMIT = timedelta(days=2)
 BOSTON = ZoneInfo("America/New_York")
 USER_AGENT = "Mozilla/5.0 (compatible; events-feed/1.0)"
 CATEGORIES = {"music": "Music", "film": "Film"}
@@ -450,7 +454,7 @@ def render_combined(item):
     )
 
 
-def render_index(events, sources, failed, built_at):
+def render_index(events, sources, failed, stale, built_at):
     days = {}
     for item in events:
         days.setdefault(item["date"], []).append(item)
@@ -471,6 +475,10 @@ def render_index(events, sources, failed, built_at):
     )
     names = ", ".join(html.escape(source["name"]) for source in sources)
     failed_note = f"<p>Couldn’t load {html.escape(', '.join(failed))}.</p>\n" if failed else ""
+    failed_note += "".join(
+        f'<p>Couldn’t reach {html.escape(name)}; its listings are from <time class="ago" datetime="{fetched.isoformat()}"></time>.</p>\n'
+        for name, fetched in stale
+    )
     body = (
         f'<nav class="filter" aria-label="Show">{buttons}</nav>\n'
         + "\n".join(sections)
@@ -667,7 +675,7 @@ def page(title, body, built_at):
 {body}
 </main>
 <script>
-  for (const t of document.querySelectorAll("time.updated")) {{
+  for (const t of document.querySelectorAll("time.updated, time.ago")) {{
     const s = Math.max(60, (Date.now() - new Date(t.dateTime)) / 1000);
     t.textContent = (s < 3600 ? Math.round(s / 60) + "m" : s < 86400 ? Math.round(s / 3600) + "h" : Math.round(s / 86400) + "d") + " ago";
   }}
@@ -677,32 +685,84 @@ def page(title, body, built_at):
 """
 
 
+def saved(item):
+    """A listing as listings.json keeps it."""
+    return {
+        "title": item["title"],
+        "date": item["date"].isoformat(),
+        "times": [moment.strftime("%H:%M") for moment in item["times"]],
+        "link": item["link"],
+        "detail": item["detail"],
+        "venue": item["venue"],
+        "category": item["category"],
+    }
+
+
+def restored(kept, source):
+    return dict(
+        kept,
+        date=date.fromisoformat(kept["date"]),
+        times=[datetime.strptime(moment, "%H:%M").time() for moment in kept["times"]],
+        source=source["name"],
+    )
+
+
+def previous_listings():
+    """What the live page was built from, for sources that fail this time. Empty if it can't be had."""
+    try:
+        return json.loads(fetch(LISTINGS_URL)).get("sources", {})
+    except Exception as error:
+        print(f"  no earlier listings to fall back on ({error})", file=sys.stderr)
+        return {}
+
+
 def main():
     sources = read_sources()
     with ThreadPoolExecutor(max_workers=6) as pool:
         results = list(pool.map(load, sources))
 
+    built_at = datetime.now(timezone.utc)
     today = datetime.now(BOSTON).date()
     last_day = today + timedelta(days=DAYS_AHEAD)
-    events, failed = [], []
+    events, failed, stale, listings, previous = [], [], [], {}, None
     for source, found, error in results:
+        fetched = built_at
+        if not error and not any(today <= item["date"] <= last_day for item in found):
+            # A source that had listings coming up last time and has none now is more likely broken for the
+            # moment (a feed served empty) than suddenly without shows, so it gets the same fallback.
+            if previous is None:
+                previous = previous_listings()
+            kept = previous.get(source["name"], {})
+            if any(date.fromisoformat(item["date"]) >= today for item in kept.get("events", [])):
+                error = "returned no listings"
         if error:
             print(f"✗ {source['name']}: {error}", file=sys.stderr)
-            failed.append(source["name"])
-            continue
+            if previous is None:
+                previous = previous_listings()
+            kept = previous.get(source["name"])
+            if not kept or built_at - datetime.fromisoformat(kept["fetched"]) > FALLBACK_LIMIT:
+                failed.append(source["name"])
+                continue
+            # Keep its last good listings, and when they were fetched, so they still age out.
+            fetched = datetime.fromisoformat(kept["fetched"])
+            found = [restored(item, source) for item in kept["events"]]
+            stale.append((source["name"], fetched))
+            print(f"  {source['name']}: showing its listings from {kept['fetched']} instead", file=sys.stderr)
         upcoming = [item for item in found if today <= item["date"] <= last_day]
-        print(f"✓ {source['name']}: {len(upcoming)} in the next {DAYS_AHEAD} days ({len(found)} listed)")
+        if fetched == built_at:
+            print(f"✓ {source['name']}: {len(upcoming)} in the next {DAYS_AHEAD} days ({len(found)} listed)")
+        listings[source["name"]] = {"fetched": fetched.isoformat(), "events": [saved(item) for item in upcoming]}
         events += upcoming
 
-    if not events:
-        sys.exit("No events loaded — not writing the page.")
+    if len(failed) + len(stale) == len(sources):
+        sys.exit("No source loaded — not writing the page.")
 
     events = merge_showings(events)
-    built_at = datetime.now(timezone.utc)
     OUT_DIR.mkdir(exist_ok=True)
     shutil.copytree(ROOT / "static", OUT_DIR, dirs_exist_ok=True)
-    (OUT_DIR / "index.html").write_text(render_index(events, sources, failed, built_at))
-    print(f"Wrote {OUT_DIR.relative_to(ROOT)}/index.html with {len(events)} listings")
+    (OUT_DIR / "index.html").write_text(render_index(events, sources, failed, stale, built_at))
+    (OUT_DIR / "listings.json").write_text(json.dumps({"built": built_at.isoformat(), "sources": listings}, ensure_ascii=False))
+    print(f"Wrote {OUT_DIR.relative_to(ROOT)}/index.html with {len(events)} listings, and listings.json")
 
 
 if __name__ == "__main__":
