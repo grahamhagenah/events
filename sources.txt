@@ -1,0 +1,20 @@
+# One source per line: how to read it, its URL, a category (music, film or arts), and a name.
+# How to read it:
+#   aeg        an AEG Presents venue's events.json (Roadrunner)
+#   rss        an event feed whose titles end in the date, "… on Sep 12, 2026" (AXS venues like The Sinclair)
+#   ticketweb  a venue page with TicketWeb's event listing (The Middle East)
+#   jsonld     a page with schema.org Event data in it (the Brattle's Coming Soon page)
+#   coolidge   the Coolidge Corner Theatre's showtimes page
+#   ics        an iCalendar feed
+
+# Music
+aeg        https://aegwebprod.blob.core.windows.net/json/events/219/events.json   music   Roadrunner
+rss        https://www.sinclaircambridge.com/events/rss   music   The Sinclair
+ticketweb  https://mideastclub.com/   music   The Middle East
+
+# Film
+jsonld     https://brattlefilm.org/coming-soon/   film   Brattle Theatre
+coolidge   https://coolidge.org/showtimes   film   Coolidge Corner Theatre
+
+# Arts and festivals
+ics        https://www.cambridgema.gov/arts/Calendar.ics   arts   Cambridge Arts
