@@ -13,8 +13,8 @@ rss        https://www.sinclaircambridge.com/events/rss   music   The Sinclair
 ticketweb  https://mideastclub.com/   music   The Middle East
 
 # Film
-jsonld     https://brattlefilm.org/coming-soon/   film   Brattle Theatre
-coolidge   https://coolidge.org/showtimes   film   Coolidge Corner Theatre
+jsonld     https://brattlefilm.org/coming-soon/   film   Brattle
+coolidge   https://coolidge.org/showtimes   film   Coolidge Corner
 
 # Arts and festivals
 ics        https://www.cambridgema.gov/arts/Calendar.ics   arts   Cambridge Arts

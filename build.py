@@ -126,7 +126,8 @@ def read_ticketweb(source):
             day,
             datetime.strptime(clock, "%I:%M %p").time(),
             link=html.unescape(link),
-            venue=text(room.group(1)).lstrip("@ ").replace(" - ", " – ") if room else "",
+            # "@ Middle East - Zuzu": just the venue, not the room; Sonia, next door, stays Sonia.
+            venue=text(room.group(1)).lstrip("@ ").split(" - ")[0] if room else "",
         ))
     return events
 
