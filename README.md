@@ -1,11 +1,5 @@
 # Events
 
-A plain list of what's on in Boston, Cambridge and Somerville over the next 30 days: concerts and films, grouped by day. Live at https://events.grahamhagenah.com/.
+The events page, https://events.grahamhagenah.com/, is built in [grahamhagenah/news](https://github.com/grahamhagenah/news), alongside the newsfeed: its code is in that repo's `events/` folder, and its venues are listed in [`events/sources.txt`](https://github.com/grahamhagenah/news/blob/main/events/sources.txt).
 
-- Sources are listed in `sources.txt`, one per line, with how to read each one. Venues rarely publish feeds, so the build uses the most dependable thing each offers: AEG's event data (Roadrunner), an event feed (The Sinclair), schema.org event data (the Brattle, House of Blues), the schedule data behind a theater chain's site (Alamo Drafthouse, Landmark's Kendall Square), Ticketmaster (the Paradise, Brighton Music Hall, the Crystal Ballroom, the Somerville Theatre), or the page itself (the Coolidge, TicketWeb listings at the Middle East). A source that fails is named at the bottom of the page; the rest still show.
-- Each build also publishes `listings.json`, what the page was built from. When a source fails, or suddenly returns nothing after having shows coming up, the next build uses its listings from there instead, if they're under two days old, and says so at the bottom of the page.
-- A source that fails every build for six hours gets a "Source failing" issue here (so GitHub emails about it), opened by `alerts.py` after each build and closed once it loads again.
-- `python3 -m unittest discover -s tests` checks each reader against a saved sample of its source (`tests/fixtures`), and the fallback rules; it runs before every deploy, so a change that breaks a reader isn't published. When a site changes and its reader is fixed, save a fresh sample too.
-- Ticketmaster venues (the Paradise) need a free [Ticketmaster Discovery API](https://developer.ticketmaster.com/) key, kept as the `TICKETMASTER_KEY` repository secret. Without it they're skipped.
-- Build locally with `python3 build.py`, then open `dist/index.html`. Uses only the Python standard library.
-- GitHub Actions rebuilds and deploys to GitHub Pages every three hours and on every push.
+This repo only serves the finished page. The `gh-pages` branch holds it, and news's build replaces that branch whenever the page is rebuilt, using a deploy key (Settings → Deploy keys). This branch's history has the code as it was before it moved.
