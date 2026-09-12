@@ -27,6 +27,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - run: python3 build.py
+        env:
+          # A free Ticketmaster Discovery API key, for venues like the Paradise. Kept as a repository secret.
+          TICKETMASTER_KEY: ${{ secrets.TICKETMASTER_KEY }}
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist

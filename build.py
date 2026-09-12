@@ -3,6 +3,7 @@
 
 import html
 import json
+import os
 import re
 import shutil
 import sys
@@ -12,6 +13,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).parent
@@ -184,6 +186,29 @@ def read_coolidge(source):
     return events
 
 
+def read_ticketmaster(source):
+    """Ticketmaster venues (the Paradise), by Discovery API venue id. The API needs a free key, read from the
+    TICKETMASTER_KEY environment variable (a repository secret on GitHub); without one these are skipped."""
+    key = os.environ.get("TICKETMASTER_KEY")
+    if not key:
+        print(f"  {source['name']}: skipped, no TICKETMASTER_KEY", file=sys.stderr)
+        return []
+    query = urlencode({"apikey": key, "venueId": source["url"], "size": 100, "sort": "date,asc"})
+    data = json.loads(fetch(f"https://app.ticketmaster.com/discovery/v2/events.json?{query}"))
+    events = []
+    for item in (data.get("_embedded") or {}).get("events", []):
+        dates = item.get("dates") or {}
+        start = dates.get("start") or {}
+        if not start.get("localDate") or (dates.get("status") or {}).get("code") == "cancelled":
+            continue
+        # Ticketmaster gives the show's own local date and time, which for these venues is Boston's.
+        clock = None
+        if start.get("localTime") and not start.get("timeTBA"):
+            clock = datetime.strptime(start["localTime"], "%H:%M:%S").time()
+        events.append(event(source, item["name"], date.fromisoformat(start["localDate"]), clock, link=item.get("url", "")))
+    return events
+
+
 def read_ics(source):
     """iCalendar feeds. Only each event's first date; repeating events aren't expanded."""
     def unescape(value):
@@ -224,6 +249,7 @@ READERS = {
     "ticketweb": read_ticketweb,
     "jsonld": read_jsonld,
     "coolidge": read_coolidge,
+    "ticketmaster": read_ticketmaster,
     "ics": read_ics,
 }
 
