@@ -36,18 +36,19 @@ def read_sources():
     return sources
 
 
-def fetch(url, attempts=2, timeout=20):
+def fetch(url, attempts=3, timeout=20):
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     for attempt in range(attempts):
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 return response.read().decode("utf-8", "replace")
         except Exception as error:
-            # Timeouts, dropped connections and 5xx errors are often momentary; a 404 won't change.
+            # Timeouts, dropped connections and 5xx errors (like the 520s Cloudflare gives when a site's own
+            # server stumbles) are often momentary; a 404 won't change. Wait a little longer each time.
             momentary = not isinstance(error, urllib.error.HTTPError) or error.code >= 500
             if not momentary or attempt == attempts - 1:
                 raise
-            time.sleep(2)
+            time.sleep(2 * (attempt + 1))
 
 
 def text(markup):
@@ -171,7 +172,12 @@ def read_coolidge(source):
     days = sorted(set(re.findall(r'data-date="(\d{4}-\d{2}-\d{2})"', first)))
     events = []
     for day_text in days:
-        page = first if day_text == days[0] else fetch(f"{source['url']}?date={day_text}")
+        try:
+            page = first if day_text == days[0] else fetch(f"{source['url']}?date={day_text}")
+        except Exception as error:
+            # One day's page failing shouldn't cost the rest of the week.
+            print(f"  {source['name']}: skipped {day_text} ({error})", file=sys.stderr)
+            continue
         day = date.fromisoformat(day_text)
         for card in page.split('<div class="film-card">')[1:]:
             film = re.search(r'class="film-card__link" title="([^"]+)" href="([^"]+)"', card)
