@@ -583,7 +583,11 @@ def page(title, body, built_at):
          font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }}
   main {{ max-width: 46rem; margin: 0 auto; }}
   header {{ display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 2rem; }}
-  .home, .home:visited {{ color: #fff; font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; text-decoration: none; }}
+  /* The newsfeed and this page, as a pair: the one you're on in white, the other a gray link to it. */
+  .sites {{ display: flex; gap: .9rem; }}
+  .sites a, .sites a:visited {{ color: #555; font-size: 1.15rem; font-weight: 700; letter-spacing: -.01em; text-decoration: none; }}
+  .sites a:hover {{ color: #999; }}
+  .sites a[aria-current], .sites a[aria-current]:hover {{ color: #fff; }}
   .header-note {{ color: #666; font-size: .8rem; white-space: nowrap; }}
   .filter {{ display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; margin: -.75rem 0 1.75rem; }}
   .filter button {{ padding: 0; border: 0; background: none; color: #666; font: inherit; font-size: .8rem; cursor: pointer; }}
@@ -652,7 +656,7 @@ def page(title, body, built_at):
 </head>
 <body>
 <main>
-<header><a class="home" href="./">Events</a><span class="header-note">Updated <time class="updated" datetime="{built_at.isoformat()}"></time></span></header>
+<header><nav class="sites" aria-label="Sites"><a href="https://news.grahamhagenah.com/">Newsfeed</a><a href="./" aria-current="page">Events</a></nav><span class="header-note">Updated <time class="updated" datetime="{built_at.isoformat()}"></time></span></header>
 {body}
 </main>
 <script>
