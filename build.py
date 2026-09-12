@@ -335,6 +335,44 @@ def merge_showings(events):
     return list(merged.values())
 
 
+FORMAT_NOTE = re.compile(r"\s*\([^)]*\b(digital|4k|35mm|70mm|16mm|imax|3d|dcp|restoration|restored)\b[^)]*\)", re.I)
+
+
+def film_key(title):
+    """A film's name as theaters' different spellings of it share: "Coyote vs. ACME" and "Coyote vs. Acme",
+    "The Odyssey (Digital)" and "The Odyssey", "Tony (2026)" and "Tony". Only this and next year's dates go,
+    which theaters add to new releases, so an older film of the same name stays apart."""
+    year = datetime.now(BOSTON).year
+    title = FORMAT_NOTE.sub("", title)
+    title = re.sub(rf"\s*\(({year}|{year + 1})\)", "", title)
+    return re.sub(r"\W+", " ", title).casefold().strip()
+
+
+def combine_films(items):
+    """A day's film playing at two or more places becomes one row, with each place's times inside it."""
+    films = {}
+    rows = []
+    for item in items:
+        if item["category"] == "film":
+            films.setdefault(film_key(item["title"]), []).append(item)
+        else:
+            rows.append(item)
+    for showings in films.values():
+        if len({item["venue"] for item in showings}) < 2:
+            rows += showings
+            continue
+        showings.sort(key=lambda item: item["times"][:1])
+        rows.append({
+            "showings": showings,
+            # The plainest of the names: without a format note ("The Odyssey", not "The Odyssey (Digital)"),
+            # then with the fewest capitals ("Coyote vs. Acme", not "Coyote vs. ACME"), the same every day.
+            "title": min((item["title"] for item in showings), key=lambda title: (len(title), sum(map(str.isupper, title)))),
+            "times": sorted(moment for item in showings for moment in item["times"])[:1],
+            "category": "film",
+        })
+    return rows
+
+
 # Rendering.
 
 
@@ -367,15 +405,39 @@ ICONS = {
 }
 
 
+def render_times(moments):
+    # data-time lets the page drop today's showings once they've started.
+    times = "".join(f'<time data-time="{moment:%H:%M}">{clock(moment)}</time>' for moment in moments)
+    return f'<span class="times">{times}</span>' if times else ""
+
+
 def render_row(item):
     """Laid out like the newsfeed: the venue on the left, then the name with that day's times after it."""
-    # data-time lets the page drop today's showings once they've started.
-    times = "".join(f'<time data-time="{moment:%H:%M}">{clock(moment)}</time>' for moment in item["times"])
+    if "showings" in item:
+        return render_combined(item)
     detail = f'<span class="detail">{html.escape(item["detail"])}</span>' if item["detail"] else ""
     return (
         f'<li data-category="{item["category"]}"><span class="source"><span>{html.escape(item["venue"])}</span></span>'
         f'<div class="headline"><a class="title" href="{html.escape(item["link"])}">{html.escape(item["title"])}</a>'
-        f'{ICONS.get(item["category"], "")}{f"<span class=times>{times}</span>" if times else ""}{detail}</div></li>'
+        f'{ICONS.get(item["category"], "")}{render_times(item["times"])}{detail}</div></li>'
+    )
+
+
+def render_combined(item):
+    """A film at several places: one row reading "4 theaters … from 12:10pm" that opens to each place's times."""
+    places = len({showing["venue"] for showing in item["showings"]})
+    first = item["times"][0] if item["times"] else None
+    start = f'<span class="times">from <time class="from" data-time="{first:%H:%M}">{clock(first)}</time></span>' if first else ""
+    showings = "".join(
+        f'<li><a href="{html.escape(showing["link"])}">{html.escape(showing["venue"])}</a>{render_times(showing["times"])}</li>'
+        for showing in item["showings"]
+    )
+    return (
+        f'<li class="combined" data-category="{item["category"]}"><details><summary>'
+        f'<span class="source"><span>{places} theaters</span></span>'
+        f'<div class="headline"><span class="title">{html.escape(item["title"])}</span>{ICONS["film"]}{start}'
+        f'<span class="more" aria-hidden="true">›</span></div></summary>'
+        f'<ul class="showings">{showings}</ul></details></li>'
     )
 
 
@@ -387,7 +449,8 @@ def render_index(events, sources, failed, built_at):
     sections = []
     for day in sorted(days):
         # Untimed listings first, then by time, then by name.
-        rows = sorted(days[day], key=lambda item: (bool(item["times"]), item["times"][:1], item["title"].casefold()))
+        rows = combine_films(days[day])
+        rows.sort(key=lambda item: (bool(item["times"]), item["times"][:1], item["title"].casefold()))
         sections.append(
             f'<section class="day" data-date="{day.isoformat()}">'
             f'<h2><span class="relative"></span><span class="date">{day.strftime("%a, %b")} {day.day}</span></h2>\n'
@@ -428,11 +491,26 @@ INDEX_JS = """
   const now = new Date().toLocaleTimeString("en-GB", { timeZone: "America/New_York", hour: "2-digit", minute: "2-digit" });
   const todays = document.querySelector(`.day[data-date="${today}"]`);
   if (todays) {
-    for (const li of todays.querySelectorAll("li")) {
-      const times = li.querySelectorAll("time");
+    for (const li of todays.querySelectorAll(":scope > ul > li")) {
+      const times = li.querySelectorAll("time:not(.from)");
       for (const t of times) if (t.dataset.time < now) t.remove();
-      if (times.length && !li.querySelector("time")) li.remove();
+      // In a film at several places, a place with nothing left today goes too.
+      for (const place of li.querySelectorAll(".showings li")) if (!place.querySelector("time")) place.remove();
+      if (times.length && !li.querySelector("time:not(.from)")) { li.remove(); continue; }
+      const from = li.querySelector("time.from");
+      if (from) {
+        const next = [...li.querySelectorAll(".showings time")].sort((a, b) => a.dataset.time < b.dataset.time ? -1 : 1)[0];
+        from.dataset.time = next.dataset.time;
+        from.textContent = next.textContent;
+        const places = li.querySelectorAll(".showings li");
+        li.querySelector(".source > span").textContent = places.length > 1 ? places.length + " theaters" : places[0].querySelector("a").textContent;
+      }
     }
+    // Reorder what's left by its next showing, as the build ordered everything by its first. Listings
+    // without a time stay at the top.
+    const next = el => (el.querySelector("time.from") || el.querySelector("time"))?.dataset.time || "";
+    const byNext = (a, b) => next(a) < next(b) ? -1 : next(a) > next(b) ? 1 : 0;
+    for (const list of todays.querySelectorAll(":scope > ul, .showings")) [...list.children].sort(byNext).forEach(el => list.append(el));
     if (!todays.querySelector("li")) todays.remove();
   }
 
@@ -447,7 +525,7 @@ INDEX_JS = """
     const shownDays = [];
     for (const day of document.querySelectorAll(".day")) {
       let shown = 0;
-      for (const li of day.querySelectorAll("li")) {
+      for (const li of day.querySelectorAll(":scope > ul > li")) {
         li.hidden = show !== "all" && li.dataset.category !== show;
         shown += !li.hidden;
       }
@@ -525,7 +603,8 @@ def page(title, body, built_at):
   .relative:not(:empty) {{ color: #fff; margin-right: .6em; }}
   ul {{ margin: 0; padding: 0; list-style: none; }}
   /* Rows as in the newsfeed: the venue beside its dot, then the name, one line tall, times after it. */
-  li {{ position: relative; display: grid; grid-template-columns: 10rem 1fr; gap: 1.25rem; align-items: baseline; padding: .4rem 0; }}
+  .day > ul > li, .combined summary {{ display: grid; grid-template-columns: 10rem 1fr; gap: 1.25rem; align-items: baseline; }}
+  .day > ul > li {{ position: relative; padding: .4rem 0; }}
   li[hidden], .day[hidden] {{ display: none; }}
   /* The dot leads the venue name, inside the text's left edge. */
   .source {{ display: flex; align-items: center; gap: .5em; min-width: 0; color: #666; font-size: .8em; }}
@@ -538,16 +617,28 @@ def page(title, body, built_at):
   .icon {{ flex: none; width: .8em; height: .8em; margin-left: .55em; color: #666; vertical-align: -.05em; }}
   .times time + time::before {{ content: ", "; }}
   .detail {{ min-width: 0; overflow: hidden; text-overflow: ellipsis; }}
+  /* A film at several places: the row opens to each place's times, with a › that turns when it's open. */
+  .day > ul > li.combined {{ display: block; }}
+  .combined summary {{ list-style: none; cursor: pointer; }}
+  .combined summary::-webkit-details-marker {{ display: none; }}
+  .combined summary:hover .title {{ text-decoration: underline; }}
+  .more {{ flex: none; display: inline-block; margin-left: .5em; color: #666; font-size: .8em; transition: transform .15s; }}
+  .combined details[open] .more {{ transform: rotate(90deg); }}
+  .showings {{ margin: .35rem 0 .2rem calc(10rem + 1.25rem); }}
+  .showings li {{ display: flex; align-items: baseline; gap: .6em; padding: .15rem 0; font-size: .9em; }}
+  .showings a {{ flex: none; color: #ccc; }}
+  .showings .times {{ margin-left: 0; white-space: normal; }}
   @media (max-width: 34rem) {{
     /* On a phone one line is too few words, so names wrap in full, below the venue. */
-    li {{ grid-template-columns: 1fr; gap: 0; }}
+    .day > ul > li, .combined summary {{ grid-template-columns: 1fr; gap: 0; }}
+    .showings {{ margin-left: 0; }}
     .headline {{ display: block; }}
     .headline .title, .times, .detail {{ white-space: normal; }}
     /* The dot moves beside the name's first line, below the venue, as in the newsfeed. It keeps to a
        slot at the left edge that the venue and name both start after. */
-    li {{ padding-left: calc(6px + .5em); }}
+    .day > ul > li {{ padding-left: calc(6px + .5em); }}
     .source::before {{ display: none; }}
-    li::before {{ content: ""; position: absolute; left: 0; top: calc(.4rem + 1.16em + .725em - 1px);
+    .day > ul > li::before {{ content: ""; position: absolute; left: 0; top: calc(.4rem + 1.16em + .725em - 1px);
                  width: 6px; height: 6px; border-radius: 50%; background: var(--dot); }}
   }}
   a {{ color: #fff; text-decoration: none; }}
