@@ -340,7 +340,7 @@ def render_index(events, sources, failed, built_at):
     body = (
         f'<nav class="filter" aria-label="Show">{buttons}</nav>\n'
         + "\n".join(sections)
-        + '\n<p class="empty" hidden>Nothing coming up.</p>\n'
+        + '\n<p class="empty" hidden>Nothing coming up.</p>\n<nav class="pager"></nav>\n'
         f"<footer>\n{failed_note}<p>From {names}.</p>\n"
         f'<p><a href="{REPO_URL}">Add a source</a></p>\n</footer>\n'
         f"<script>{INDEX_JS}</script>"
@@ -374,23 +374,38 @@ INDEX_JS = """
     if (!todays.querySelector("li")) todays.remove();
   }
 
-  // The filter shows every category or just one, and is remembered in this browser.
+  // The filter shows every category or just one, and is remembered in this browser. Three days show at a
+  // time, counting only days with something the filter shows; ?page=2 shows the next three.
+  const DAYS_PER_PAGE = 3;
   const filter = document.querySelector(".filter");
+  const pager = document.querySelector(".pager");
   let show = "all";
   try { show = localStorage.getItem("events-show") || "all"; } catch (error) {}
   function showEvents() {
-    let any = false;
+    const shownDays = [];
     for (const day of document.querySelectorAll(".day")) {
       let shown = 0;
       for (const li of day.querySelectorAll("li")) {
         li.hidden = show !== "all" && li.dataset.category !== show;
         shown += !li.hidden;
       }
-      day.hidden = shown === 0;
-      any = any || shown > 0;
+      day.hidden = true;
+      day.classList.remove("first");
+      if (shown) shownDays.push(day);
     }
-    document.querySelector(".empty").hidden = any;
+    const pages = Math.max(1, Math.ceil(shownDays.length / DAYS_PER_PAGE));
+    const page = Math.min(pages, Math.max(1, parseInt(new URLSearchParams(location.search).get("page")) || 1));
+    const onPage = shownDays.slice((page - 1) * DAYS_PER_PAGE, page * DAYS_PER_PAGE);
+    for (const day of onPage) day.hidden = false;
+    onPage[0]?.classList.add("first");
+    const link = (n, text) => `<a href="${n === 1 ? location.pathname : "?page=" + n}">${text}</a>`;
+    pager.innerHTML = pages < 2 ? "" :
+      (page > 1 ? link(page - 1, "← Earlier") : "<span></span>") +
+      `<span>Page ${page} of ${pages}</span>` +
+      (page < pages ? link(page + 1, "Later →") : "<span></span>");
+    document.querySelector(".empty").hidden = shownDays.length > 0;
     for (const b of filter.children) b.setAttribute("aria-pressed", b.dataset.show === show);
+    document.querySelector("main").classList.add("paged");
   }
   showEvents();
   filter.addEventListener("click", event => {
@@ -398,6 +413,7 @@ INDEX_JS = """
     if (!b) return;
     show = b.dataset.show;
     try { localStorage.setItem("events-show", show); } catch (error) {}
+    history.replaceState(null, "", location.pathname); // Back to page one.
     showEvents();
   });
 """
@@ -439,7 +455,11 @@ def page(title, body, built_at):
   [data-show="film"], [data-category="film"] {{ --dot: var(--film); }}
   [data-show="arts"], [data-category="arts"] {{ --dot: var(--arts); }}
   h2 {{ margin: 2.25rem 0 .5rem; color: #777; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }}
-  .day:first-of-type h2 {{ margin-top: 0; }}
+  .day.first h2 {{ margin-top: 0; }}
+  /* Until the script picks the page, show the first three days, so the whole month never flashes up. */
+  main:not(.paged) .day:nth-of-type(n+4) {{ display: none; }}
+  .pager {{ display: flex; justify-content: space-between; margin-top: 2.5rem; color: #666; font-size: .8rem; }}
+  .pager a, .pager a:visited {{ color: #999; }}
   .relative:not(:empty) {{ color: #fff; margin-right: .6em; }}
   ul {{ margin: 0; padding: 0; list-style: none; }}
   /* Rows as in the newsfeed: the venue beside its dot, then the name, one line tall, times after it. */
