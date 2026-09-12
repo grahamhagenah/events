@@ -411,6 +411,12 @@ def page(title, body, built_at):
     li {{ grid-template-columns: 1fr; gap: 0; }}
     .headline {{ display: block; }}
     .headline .title, .times, .detail {{ white-space: normal; }}
+    /* The dot moves beside the name's first line, below the venue, as in the newsfeed. It keeps to a
+       slot at the left edge that the venue and name both start after. */
+    li {{ padding-left: calc(6px + .5em); }}
+    .source::before {{ display: none; }}
+    li::before {{ content: ""; position: absolute; left: 0; top: calc(.4rem + 1.16em + .725em - 1px);
+                 width: 6px; height: 6px; border-radius: 50%; background: var(--dot); }}
   }}
   a {{ color: #fff; text-decoration: none; }}
   a:hover {{ text-decoration: underline; }}
