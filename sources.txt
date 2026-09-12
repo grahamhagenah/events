@@ -17,6 +17,7 @@ jsonld     https://boston.houseofblues.com/shows   music   House of Blues
 ticketmaster  KovZpZA11JtA   music   Paradise
 ticketmaster  KovZpapwne   music   Brighton Music Hall
 ticketmaster  KovZ917AJnQ   music   Crystal Ballroom
+ticketmaster  KovZpZAaFnJA   music   Somerville Theatre
 
 # Film
 jsonld     https://brattlefilm.org/coming-soon/   film   Brattle
