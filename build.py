@@ -605,7 +605,8 @@ def page(title, body, built_at):
   /* Rows as in the newsfeed: the venue beside its dot, then the name, one line tall, times after it. */
   .day > ul > li, .combined summary {{ display: grid; grid-template-columns: 10rem 1fr; gap: 1.25rem; align-items: baseline; }}
   .day > ul > li {{ position: relative; padding: .4rem 0; }}
-  li[hidden], .day[hidden] {{ display: none; }}
+  /* Whatever the filter and pager hide stays hidden, however specific the rules that lay it out. */
+  [hidden] {{ display: none !important; }}
   /* The dot leads the venue name, inside the text's left edge. */
   .source {{ display: flex; align-items: center; gap: .5em; min-width: 0; color: #666; font-size: .8em; }}
   .source::before {{ flex: none; }}
