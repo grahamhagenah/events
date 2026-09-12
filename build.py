@@ -256,6 +256,29 @@ def clock(moment):
     return f"{hour}{'' if moment.minute == 0 else f':{moment.minute:02d}'}{'am' if moment.hour < 12 else 'pm'}"
 
 
+def icon(label, drawing):
+    label = html.escape(label)
+    return (
+        f'<svg class="icon" viewBox="0 0 16 16" role="img" aria-label="{label}"><title>{label}</title>'
+        f'<g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">'
+        f"{drawing}</g></svg>"
+    )
+
+
+# Small monochrome marks after each name, like the newsfeed's podcast headphones.
+ICONS = {
+    # Two beamed eighth notes.
+    "music": icon("Music", '<path d="M5.5 12.5V4l8-2v8.5"/><circle cx="3.75" cy="12.5" r="1.75" fill="currentColor"/>'
+                           '<circle cx="11.75" cy="10.5" r="1.75" fill="currentColor"/>'),
+    # A frame of film, with sprocket holes down both sides.
+    "film": icon("Film", '<rect x="2" y="2" width="12" height="12" rx="1.5"/><path d="M5 2v12M11 2v12'
+                         'M2 5.5h3M2 10.5h3M11 5.5h3M11 10.5h3"/>'),
+    # A four-point sparkle.
+    "arts": icon("Arts & festivals", '<path d="M8 1.75 9.5 6.5 14.25 8 9.5 9.5 8 14.25 6.5 9.5 1.75 8 6.5 6.5Z" '
+                                     'fill="currentColor" stroke-width="1"/>'),
+}
+
+
 def render_row(item):
     """Laid out like the newsfeed: the venue on the left, then the name with that day's times after it."""
     # data-time lets the page drop today's showings once they've started.
@@ -264,7 +287,7 @@ def render_row(item):
     return (
         f'<li data-category="{item["category"]}"><span class="source"><span>{html.escape(item["venue"])}</span></span>'
         f'<div class="headline"><a class="title" href="{html.escape(item["link"])}">{html.escape(item["title"])}</a>'
-        f'{f"<span class=times>{times}</span>" if times else ""}{detail}</div></li>'
+        f'{ICONS.get(item["category"], "")}{f"<span class=times>{times}</span>" if times else ""}{detail}</div></li>'
     )
 
 
@@ -404,6 +427,7 @@ def page(title, body, built_at):
   .headline .title {{ min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }}
   .times, .detail {{ margin-left: .6em; color: #666; font-size: .8em; white-space: nowrap; }}
   .times {{ flex: none; }}
+  .icon {{ flex: none; width: .8em; height: .8em; margin-left: .55em; color: #666; vertical-align: -.05em; }}
   .times time + time::before {{ content: ", "; }}
   .detail {{ min-width: 0; overflow: hidden; text-overflow: ellipsis; }}
   @media (max-width: 34rem) {{
